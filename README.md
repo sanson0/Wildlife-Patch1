@@ -1,59 +1,53 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Reasons for site
+This website has been created to:-
+- Help people to project manage changes to their garden
+- Suggest garden ideas that will make it more wildlife friendly
+- Give people a place to share ideas
+- Raise awareness of environmental issues
+- Aid conservation
+- Provide a source of income by promoting sales of ready-made wildlife friendly products
 
-Welcome USER_NAME,
+# Features
+- There will be a home page with navigation to login and create account options
+- Pages are read only unless user registers or logs in
+- Surveys page with most popular links and bee background
+- There is a page of people's projects that people have submitted for public view
+- When logged in, the navigation bar changes to show new options.
+- There is the option of creating and updating a personal profile page.
+- There is a projects page for the user to pick one or create a new one.
+- The projects page has suggested time and cost of a project to help manage the project.
+- There are links to buying ready-made wildlife friendly products so the site can benefit financially.
+- If logged in as an administrator, there is an admin page for managing categories of data and projects.
+- There is a search function that targets project name and parts of task description.
+- There is a logout option
+- Small profile pictures can be added to the user's profile
+- Small images can be added to the categories
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+For the Wildlife Surveys page, the top results were:-
+Royal Society for the Protection of Birds
+People’s Trust for Endangered Species
+National Biodiversity Network
+National Trust
+The Wildlife Trusts
+Woodlands.co.uk
+Buglife
+A link is provided for all these groups on the Surveys page.
 
-## Gitpod Reminders
+# Credits
+The following images were taken from [Pixabay](https://pixabay.com)
+https://cdn.pixabay.com/photo/2019/04/21/01/12/chrysanthemum-4143241__340.jpg
+https://cdn.pixabay.com/photo/2016/09/04/12/05/sun-flower-1643795_960_720.jpg
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+| Category | Link |
+| -------- | ---- |
+| bugs | https://cdn.pixabay.com/photo/2014/06/15/11/00/bug-369229__340.jpg |
+| birds | https://cdn.pixabay.com/photo/2020/01/25/10/35/blue-tit-4792149_960_720.jpg |
+| bats | https://cdn.pixabay.com/photo/2020/02/28/13/21/bat-4887509_960_720.jpg |
+| hedgehogs | https://cdn.pixabay.com/photo/2018/09/25/21/54/hedgehog-3703244_960_720.jpg |
+| aquatic life | https://cdn.pixabay.com/photo/2019/10/04/22/07/frog-4526640_960_720.jpg |
+| food | https://cdn.pixabay.com/photo/2018/08/12/19/49/grains-3601581__340.jpg |
+| maintenance | https://cdn.pixabay.com/photo/2017/08/03/16/44/landscape-2577207__340.jpg |
+| pest control | https://cdn.pixabay.com/photo/2016/06/07/07/46/snail-1441138_960_720.jpg |
+| shelter | https://cdn.pixabay.com/photo/2015/12/09/18/12/insect-house-1085197_960_720.jpg |
+| ponds | https://cdn.pixabay.com/photo/2016/06/07/20/20/water-lilies-1442497__340.jpg |
 
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
----
-
-Happy coding!
