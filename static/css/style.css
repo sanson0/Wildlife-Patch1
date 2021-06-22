@@ -1,0 +1,49 @@
+/* Wildlife surveys page */
+#surveys-sunflower {
+  background-image: url('https://cdn.pixabay.com/photo/2016/09/04/12/05/sun-flower-1643795_960_720.jpg');
+  background-repeat: repeat-y;
+  background-size: cover;
+  width: 100%
+}
+
+.survey-link a {
+    color: white;
+    text-decoration: underline;
+}
+
+.survey-link {
+  width: 300px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: brown;
+}
+.short {
+  width: 160px;
+}
+#words {
+  margin-top: 15px;
+  width: 150px;
+  height: auto;
+  font-weight: 700;
+}
+
+#space {
+  height: 100px;
+  width: 100px;
+}
+.survey-bar {
+  background-color: brown;
+}
+#survey-title {
+  font-weight: 700;
+  text-align: center;
+}
+#login-statement {
+  color: white;
+  width: 200px;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding-left: 20px;
+  float: right
+}
