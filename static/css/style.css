@@ -100,3 +100,23 @@ background-color: greenyellow;
 .peoplesprojects-bar {
   background-color: darkolivegreen;
 }
+/* Create account page */
+#account-pic {
+   background-image: url(https://cdn.pixabay.com/photo/2018/07/29/21/32/flowers-3571119_960_720.jpg);
+  background-repeat: repeat-y;
+  background-size: cover;
+  width: 100%
+}
+.createaccount-bar {
+  background-color: darkred;
+}
+#create-account {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 450px;
+  height: auto;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+  margin: auto;
+}
