@@ -120,3 +120,23 @@ background-color: greenyellow;
   border-radius: 5px;
   margin: auto;
 }
+/* Login page */
+#login-pic {
+   background-image: url(https://cdn.pixabay.com/photo/2018/07/15/00/39/flowers-3538726_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%
+}
+.login-bar {
+  background-color: darkgreen;
+}
+#login-title {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 200px;
+  height: auto;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+  margin: auto;
+}
