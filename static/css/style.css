@@ -79,3 +79,24 @@ background-color: greenyellow;
   padding-left: 20px;
   float: right
 }
+/*  People's projects */
+#bug-shelter {
+  background-image: url(https://cdn.pixabay.com/photo/2018/04/22/11/05/background-3340740_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%
+}
+.grey-collapsible {
+  background-color: lightgrey;
+}
+#project-title {
+  width: 400px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: rgb(75, 43, 4);
+  color: whitesmoke;
+  margin: auto;
+}
+.peoplesprojects-bar {
+  background-color: darkolivegreen;
+}

@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="static/css/style.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
      referrerpolicy="no-referrer" type="text/css">
-  <title>Wildlife Patch Home</title>
+  <title>Wildlife Patch People's Projects</title>
 </head>
-<body id="wild-garden">
-   <header>
-     <div id="people-projects">
-       <h1>Wildlife Patch</h1>
-     </div>
-     <!--Nav bar from Materialize-->
+<body id="bug-shelter">
+  <header>
+    <div id="project-title">
+      <h2>People's Projects</h2>
+    </div>
+    <!--Nav bar from Materialize-->
     <nav>
-    <div class="nav-wrapper home-bar">
+    <div class="nav-wrapper peoplesprojects-bar">
       <ul id="nav-mobile" class="right">
         <li><a href="index.html">Home</a></li>
         <li><a href="survey.html">Wildlife Surveys</a></li>
-        <li><a href="peoplesprojects.html">People's Projects</a></li>
+        <li><a href="othersprojects.html">People's Projects</a></li>
         <li><a href="#">Create Account</a></li>
         <li><a href="#">Login</a></li>
       </ul>
@@ -28,8 +28,8 @@
   </nav>
   <p id="login-statement">Manage your projects or contribute by logging in</p>
   <div id="space"></div>
-</header>
-<div class="row">
+  </header>
+  <div class="row">
   <div class="input-field col s10 m10 offset-s1 offset-m1">
     <i class="fas fa-search prefix light-green-text text-darken-4"></i>
       <input type="text" name="query" id="query" minlength="3" class="validate" required>
@@ -44,11 +44,10 @@
       </button>
   </div>
   </div>
-<!--categories-->
   <div class="row">
-  <ul class="collapsible green-collapsible col s9 offset-s1 m9 offset-m1">
+  <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
 	<li>
-		<div class="collapsible-header white-text green darken-1 text-shadow row">
+		<div class="collapsible-header white-text brown darken-1 text-shadow row">
 			<div>
 				<i class="fas fa-caret-down"></i>
       </div>
@@ -57,11 +56,11 @@
                 <strong>Bats</strong>
             </div>
         </div>
-        <div class="collapsible-body green-collapsible">
+        <div class="collapsible-body grey-collapsible">
          <div class="row">
-  <ul class="green-collapsible collapsible col s9 m9 offset-s1 m9 offset-m1">
+  <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
 	<li>
-		<div class="collapsible-header white-text green darken-1 text-shadow row">
+		<div class="collapsible-header white-text brown darken-1 text-shadow row">
 			<div>
 				<i class="fas fa-caret-down"></i>
       </div>
@@ -70,7 +69,7 @@
                 <strong>Bat shelter</strong>
             </div>
         </div>
-        <div class="collapsible-body green-collapsible">
+        <div class="collapsible-body grey-collapsible">
          <strong>Bat house</strong>
          <p>description</p>
          <p><em>by: created by</em></p>
@@ -78,14 +77,14 @@
     </li>
 </ul>
 </div>
-</div>
+        </div>
     </li>
 </ul>
 </div>
 <div class="row">
-  <ul class="green-collapsible collapsible col s9 m9 offset-s1 m9 offset-m1">
+  <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
 	<li>
-		<div class="collapsible-header white-text green darken-1 text-shadow row">
+		<div class="collapsible-header white-text brown darken-1 text-shadow row">
 			<div>
 				<i class="fas fa-caret-down"></i>
       </div>
@@ -94,7 +93,7 @@
                 <strong>Hedgehogs</strong>
             </div>
         </div>
-        <div class="collapsible-body green-collapsible">
+        <div class="collapsible-body grey-collapsible">
          <strong>Hedgehog house</strong>
          <p>description</p>
          <p><em>by: created by</em></p>
@@ -102,7 +101,8 @@
     </li>
 </ul>
 </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="static/js/script.js"></script>
 </body>
