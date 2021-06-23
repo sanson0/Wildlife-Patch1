@@ -178,3 +178,14 @@ background-color: greenyellow;
   font-weight: 700;
   text-align: center;
 }
+/* Projects page */
+.project-bar {
+  background-color: rgb(63, 5, 5);
+}
+#project-background {
+  background-color: rgb(192, 247, 192);
+}
+#projects-title {
+  font-weight: 700;
+  text-align: center;  
+}
