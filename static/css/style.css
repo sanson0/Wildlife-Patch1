@@ -236,3 +236,14 @@ background-color: greenyellow;
   padding-left: 40px;
   margin-bottom: 20px;
 }
+/* Add own project page */
+.addown-bar {
+  background-color: darkslateblue;
+}
+#add-project {
+  background-color: lightcoral;
+}
+#addproject-title {
+  font-weight: 700;
+  text-align: center;  
+}
