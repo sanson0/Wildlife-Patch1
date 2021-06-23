@@ -162,3 +162,19 @@ background-color: greenyellow;
   border-radius: 5px;
   margin: auto;
 }
+/* Profile page */
+.profile-bar {
+  background-color: darkolivegreen;
+}
+#profile-background {
+  background-color: lemonchiffon;
+}
+#profile-description {
+  width: 400px;
+  height: 400px;
+  float: left;
+}
+#profile-title {
+  font-weight: 700;
+  text-align: center;
+}
