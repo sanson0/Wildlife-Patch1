@@ -214,3 +214,25 @@ background-color: greenyellow;
 .yellow-collapsible {
   background-color: lemonchiffon;
 }
+/* recent project page */
+#recent-project {
+  background-color: greenyellow;
+}
+#recentprojects-title {
+  font-weight: 700;
+  text-align: center;   
+}
+.white-collapsible {
+  background-color: whitesmoke;
+}
+.add-category {
+  background-color: brown;
+  color: #ffffff;
+  height: 36px;
+  width: 200px;
+  border-radius: 2px;
+  margin-left: 20px;
+  padding-top: 5px;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
