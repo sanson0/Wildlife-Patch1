@@ -189,3 +189,10 @@ background-color: greenyellow;
   font-weight: 700;
   text-align: center;  
 }
+/* Logout page */
+.logout-bar {
+  background-color: darkblue;
+}
+#logout-background {
+  background-color: lightcyan;
+}
