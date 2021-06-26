@@ -40,7 +40,9 @@ background-color: greenyellow;
   background-size: cover;
   width: 100%
 }
-
+.green-collapsible {
+    background-color: greenyellow;
+}
 .survey-link a {
     color: white;
     text-decoration: underline;

@@ -37,71 +37,46 @@
   </div>
   </div>
 <!--categories-->
-  <div class="row">
-  <ul class="collapsible green-collapsible col s9 offset-s1 m9 offset-m1">
-      
-	<li>
-		<div class="collapsible-header white-text green darken-1 text-shadow row">
-			<div>
-				<i class="fas fa-caret-down"></i>
-      </div>
-      <div class="col s9">
-        <img src="https://cdn.pixabay.com/photo/2020/02/28/13/21/bat-4887509_960_720.jpg" alt="bats" height="40" width="auto">
-                <strong>Bats</strong>
-            </div>
-        </div>
-        <div class="collapsible-body green-collapsible">
-         <div class="row">
-  <ul class="green-collapsible collapsible col s9 m9 offset-s1 m9 offset-m1">
-	<li>
-		<div class="collapsible-header white-text green darken-1 text-shadow row">
-			<div>
-				<i class="fas fa-caret-down"></i>
-      </div>
-      <div class="col s9">
-        <img src="https://cdn.pixabay.com/photo/2018/09/25/21/54/hedgehog-3703244_960_720.jpg" alt="hedgehogs" height="40" width="auto">
-                <strong>Bat shelter</strong>
-            </div>
-        </div>
-        <div class="collapsible-body green-collapsible">
-         <strong>Bat house</strong>
-         <p>description</p>
-         <p><em>by: created by</em></p>
-        </div>
-    </li>
-</ul>
-</div>
-</div>
-    </li>
-</ul>
-</div>
 <div class="row">
-  <ul class="green-collapsible collapsible col s9 m9 offset-s1 m9 offset-m1">
-      {% for task in tasks %}
-	<li>
-		<div class="collapsible-header white-text green darken-1 text-shadow row">
-			<div>
-				<i class="fas fa-caret-down"></i>
-      </div>
-      <div class="col s9">
-        <img src="https://cdn.pixabay.com/photo/2018/09/25/21/54/hedgehog-3703244_960_720.jpg" alt="hedgehogs" height="40" width="auto">
-                <strong>{{ task.category_name }}</strong>
+    <ul class="collapsible green-collapsible col s9 offset-s1 m9 offset-m1">
+        {% for task in tasks %}
+        <li>
+            <div class="collapsible-header white-text green darken-1 text-shadow row">
+                <div>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="col s9">
+                    <img src="https://cdn.pixabay.com/photo/2020/02/28/13/21/bat-4887509_960_720.jpg" alt="bats"
+                        height="40" width="auto">
+                    <strong>{{ task.category_name }}</strong>
+                </div>
             </div>
-        </div>
-        <div class="collapsible-body green-collapsible">
-         <strong>{{ task.task_name }}</strong> : {{ task.finish_date }}
-         <p>description</p>
-         <p><em>by: created by</em></p>
-        </div>
-    </li>
-    {% endfor %}
-</ul>
+            <div class="collapsible-body green-collapsible">
+                <div class="row">
+                    <ul class="green-collapsible collapsible col s9 m9 offset-s1 m9 offset-m1">
+                        <li>
+                            <div class="collapsible-header white-text green darken-1 text-shadow row">
+                                <div>
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                                <div class="col s9">
+                                    <img src="https://cdn.pixabay.com/photo/2018/09/25/21/54/hedgehog-3703244_960_720.jpg"
+                                        alt="hedgehogs" height="40" width="auto">
+                                    <strong>{{ task.task_name }}</strong>
+                                </div>
+                            </div>
+                            <div class="collapsible-body green-collapsible">
+                                <strong>{{ task.task_name }}</strong>
+                                <p>{{ task.task_description }}</p>
+                                <p><em>{{ task.created_by }}</em></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 </div>
-
-  
-    {% for task in tasks %}
-        {{ task.task_name }}<br>
-        {{ task.category }}
-    {% endfor %}
 </body>
 {% endblock %}
