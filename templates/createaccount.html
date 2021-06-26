@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+<body id="account-pic">
+<header>
+     <div id="create-account">
+       <h1>Create Account</h1>
+     </div>
+  <!--Nav bar from Materialize-->
+    <!--Nav bar from Materialize-->
+    <!-- mobile sidenav -->
+    <nav class="home-bar">
+    <div class="nav-wrapper">
+      
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
+        <li><a href="badges.html">Wildlife Surveys</a></li>
+        <li><a href="collapsible.html">People's Projects</a></li>
+        <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
+    <li><a href="badges.html">Wildlife Surveys</a></li>
+    <li><a href="collapsible.html">People's Projects</a></li>
+    <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
+  </ul>
+  <p id="login-statement">Manage your projects or contribute by logging in</p>
+  <div id="space"></div>
+</header>
+  <!--Form from text inputs from Marginalize 1.0.0-->
+  <div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('createaccount') }}">
+        <!--Name-->
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+          <label for="username">Username</label>
+        </div>
+      </div>
+      <!--???-->
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="disabled" type="text" class="validate">
+          <label for="disabled">Disabled</label>
+        </div>
+      </div>
+      <!--Password-->
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <!--Email-->
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          This is an inline input field:
+          <div class="input-field inline">
+            <input id="email_inline" type="email" class="validate">
+            <label for="email_inline">Email</label>
+            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+          </div>
+        </div>
+      </div>
+      <!--Create Account-->
+      <div class="row">
+          <button type="submit" class="col s3 btn-large light-green text-shadow">
+              Create Account <i class="fas fa-sign-in-alt"></i>
+          </button>
+      </div>
+      <a href="welcome.html">Welcome User1</a>
+      <a href="welcomeadmin.html">Welcome Admin1</a>
+    </form>
+  </div>
+</body>
+{% endblock %}

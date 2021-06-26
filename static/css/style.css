@@ -125,6 +125,9 @@ background-color: greenyellow;
   border-radius: 5px;
   margin: auto;
 }
+input {
+    color: aliceblue;
+}
 /* Login page */
 #login-pic {
    background-image: url(https://cdn.pixabay.com/photo/2018/07/15/00/39/flowers-3538726_960_720.jpg);
