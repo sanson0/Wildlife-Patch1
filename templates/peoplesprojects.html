@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body id="bug-shelter">
+    <header>
+        <div id="project-title">
+            <h2>People's Projects</h2>
+        </div>
+        <!--Nav bar from Materialize-->
+        <!-- mobile sidenav -->
+        <nav class="peoplesprojects-bar">
+            <div class="nav-wrapper">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
+                    <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+                    <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+                    <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
+            <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+            <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+            <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
+        </ul>
+        <p id="login-statement">Manage your projects or contribute by logging in</p>
+        <div id="space"></div>
+    </header>
+    <div class="row">
+        <div class="input-field col s10 m10 offset-s1 offset-m1">
+            <i class="fas fa-search prefix light-green-text text-darken-4"></i>
+            <input type="text" name="query" id="query" minlength="3" class="validate" required>
+            <label for="query">Search Categories</label>
+        </div>
+        <div>
+            <div id="reset-buttn">
+                Reset
+            </div>
+            <button type="submit" class="light-green btn text-shadow">
+                <i class="fas fa-search left"></i> Search
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
+            {% for peoplesproject in peoplesprojects %}
+            <li>
+                <div class="collapsible-header white-text brown darken-1 text-shadow row">
+                    <div>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                    <div class="col s9">
+                        <img src="https://cdn.pixabay.com/photo/2020/02/28/13/21/bat-4887509_960_720.jpg" alt="bats"
+                            height="40" width="auto">
+                        <strong>{{ peoplesproject.category_name }}</strong>
+                    </div>
+                </div>
+                <div class="collapsible-body grey-collapsible">
+                    <div class="row">
+                        <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
+                            
+                            <li>
+                                <div class="collapsible-header white-text brown darken-1 text-shadow row">
+                                    <div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                    <div class="col s9">
+                                        <img src="https://cdn.pixabay.com/photo/2018/09/25/21/54/hedgehog-3703244_960_720.jpg"
+                                            alt="hedgehogs" height="40" width="auto">
+                                        <strong>{{ peoplesproject.task_name }}</strong>
+                                    </div>
+                                </div>
+                                <div class="collapsible-body grey-collapsible">
+                                    <strong>{{ peoplesproject.task_name }}</strong>
+                                    <p>description</p>
+                                    <p><em>by: created by</em></p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+</body>
+{% endblock %}

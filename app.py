@@ -27,6 +27,18 @@ def get_tasks():
     return render_template("tasks.html", tasks=tasks)
 
 
+@app.route("/surveys")
+def surveys():
+    return render_template("surveys.html")
+
+
+@app.route("/get_peoplesprojects")
+def get_peoplesprojects():
+    peoplesprojects = list(mongo.db.peoplesprojects.find())
+    return render_template(
+        "peoplesprojects.html", peoplesprojects=peoplesprojects)
+
+
 @app.route("/createaccount", methods=["GET", "POST"])
 def createaccount():
     if request.method == "POST":

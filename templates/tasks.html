@@ -14,17 +14,17 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
-        <li><a href="badges.html">Wildlife Surveys</a></li>
-        <li><a href="collapsible.html">People's Projects</a></li>
+        <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+        <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
         <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
       </ul>
     </div>
   </nav>
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="{{ url_for('get_tasks') }}">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="{{ url_for('createaccount') }}">Mobile</a></li>
+    <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
+    <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+    <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+    <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
   </ul>
     <p id="login-statement">Manage your projects or contribute by logging in</p>
     <div id="space"></div>

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<body id="surveys-sunflower">
+    <header>
+      <div id="survey-title">
+       <h1>Surveys</h1>
+     </div>
+  <nav class="survey-bar">
+    <div class="nav-wrapper">
+      
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
+        <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+        <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+        <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
+    <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+    <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+    <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
+  </ul>
+  <p id="login-statement">Manage your projects or contribute by logging in</p>
+  <div id="space"></div>
+</header>
+    
+    <div class="survey-link">
+    <a href="https://www.rspb.org.uk/our-work/conservation/centre-for-conservation-science/working-with-us/surveys/">Royal Society for the Protection of Birds (RSPB)</a>
+  </div>
+  <div class="survey-link">
+   <a href="https://ptes.org/get-involved/surveys/">People's Trust for Endangered Species (PTES)</a>
+   </div>
+  <div class="survey-link">
+   <a href="https://nbn.org.uk/tools-and-resources/useful-websites/database-of-wildlife-surveys-and-recording-schemes/">National Biodiversity Network (NBN)</a>
+   </div>
+   <div class="survey-link short">
+    <a href="https://www.nationaltrust.org.uk/minchinhampton-and-rodborough-commons/features/wildlife-surveys">National Trust</a>
+    </div>
+    <div class="survey-link short">
+   <a href="https://www.wildlifetrusts.org/actions/how-take-part-citizen-survey">The Wildlife Trusts</a>
+   </div>
+   <div class="survey-link short">
+   <a href="https://www.woodlands.co.uk/blog/flora-and-fauna/wildlife-surveys/">Woodlands.co.uk</a>
+   </div>
+   <div class="survey-link short">
+   <a href="https://www.buglife.org.uk/get-involved/surveys/">Buglife</a>
+   </div>
+   <div id="words">Help conservation and contribute to science by providing data for wildlife and plant surveys.</div>
+  </body>
+  {% endblock %}
