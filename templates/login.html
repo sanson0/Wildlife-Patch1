@@ -15,19 +15,27 @@
         <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
         <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
         <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+        {% if session.user %}
+        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        {% else %}
         <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
-        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>
   <ul class="sidenav" id="mobile-demo">
     <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
-    <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
-    <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
-    <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
-    <li><a href="{{ url_for('login') }}">Log In</a></li>
-    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+        <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+        <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+        {% if session.user %}
+        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        {% else %}
+        <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
+        <li><a href="{{ url_for('login') }}">Log In</a></li>
+        {% endif %}
   </ul>
   <p id="login-statement">Manage your projects or contribute by logging in</p>
   <div id="space"></div>
