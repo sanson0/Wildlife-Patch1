@@ -16,6 +16,7 @@
         <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
         {% if session.user %}
         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+        <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
         <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
@@ -30,6 +31,7 @@
         <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
         {% if session.user %}
         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+        <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
         <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
