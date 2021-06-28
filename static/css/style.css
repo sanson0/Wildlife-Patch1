@@ -177,11 +177,6 @@ input {
 #profile-background {
   background-color: lemonchiffon;
 }
-#profile-description {
-  width: 400px;
-  height: 400px;
-  float: left;
-}
 #profile-title {
   font-weight: 700;
   text-align: center;

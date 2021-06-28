@@ -1,26 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="static/css/style.css" type="text/css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer"
-	 type="text/css">
-	<title>Wildlife Patch Profile</title>
-</head>
-
+{% extends "base.html" %}
+{% block content %}
 <body id="profile-background">
 	<header>
      <div id="profile-title">
        <h1>Your Profile User1</h1>
      </div>
-    <!--Nav bar from Materialize-->
+   <!--Nav bar from Materialize-->
     <!-- mobile sidenav -->
-    <nav class="home-bar">
+    <nav class="profile-bar">
     <div class="nav-wrapper">
-      
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
@@ -28,6 +16,7 @@
         <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
         <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
       </ul>
     </div>
   </nav>
@@ -37,6 +26,7 @@
     <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
     <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
     <li><a href="{{ url_for('login') }}">Log In</a></li>
+    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
   </ul>
   <p id="login-statement">Manage your projects or contribute by logging in</p>
   <div id="space"></div>
@@ -50,8 +40,9 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <h6>Name: Sarah</h6>
-          <p>I am interested in gardens and wildlife.</p>
+          <h6>
+              {{ username }}'s Profile
+          </h6>
         </div>
       </div>
     </div>
@@ -59,4 +50,4 @@
 </div>
 <p>Your profile picture will appear next to an contributions to this site</p>
 </body>
-</html>
+{% endblock %}

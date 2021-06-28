@@ -18,6 +18,7 @@
         <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
         <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
       </ul>
     </div>
   </nav>
@@ -27,6 +28,7 @@
     <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
     <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
     <li><a href="{{ url_for('login') }}">Log In</a></li>
+    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
   </ul>
   <p id="login-statement">Manage your projects or contribute by logging in</p>
   <div id="space"></div>
