@@ -43,69 +43,77 @@
         <p id="login-statement">Manage your projects or contribute by logging in</p>
         <div id="space"></div>
     </header>
+    <h3 class="light-green-text text-darken-4 center-align">Add Project</h3>
 
-    <div class="row card-panel grey">
-        <form class="col s12" method="POST" action="">
+    <div class="row card-panel grey lighten-5">
+        <form class="col s12" method="POST" action="{{ url_for('addownproject') }}">
             <div class="row">
+                <!-- category selection -->
                 <div class="input-field col s12">
-                    <i class="fas fa-folder-open light-green-text"></i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose Category</option>
                         {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                         {% endfor %}
                     </select>
-                    <label for="category_name">Category</label>
-                    <i class="fas fa-pencil-alt">Category</i>
-                    <input id="category_name" name="category_name" minlength="5" maxlength="50" type="text"
-                        class="validate" required>
-                    <label for="category_name">Project Category:</label>
+                    <label for="category_name">Choose Category</label>
                 </div>
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt">Name</i>
-                    <input id="project-name" name="project-name" type="text" class="validate">
-                    <label for="project-name">Project Name</label>
+                <!-- task name -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                        <input id="task_name" name="task_name" minlength="5" maxlength="50" type="text" class="validate"
+                            required>
+                        <label for="task_name">Task Name</label>
+                    </div>
                 </div>
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix">Description</i>
-                    <textarea id="project-description" name="project-description" minlength="20" maxlength="200"
-                        class="materialize-textarea validate" required></textarea>
-                    <label for="project-description">Textarea</label>
+                <!-- task description -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-align-left prefix light-green-text text-darken-4"></i>
+                        <textarea id="task_description" name="task_description" minlength="5" maxlength="200"
+                            class="materialize-textarea validate" required></textarea>
+                        <label for="task_description">Task Description</label>
+                    </div>
                 </div>
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt">Cost Estimate</i>
-                    <input id="cost-estimate" name="cost-estimate" type="text" class="validate">
-                    <label for="cost-estimate">Cost Estimate</label>
+                <!-- estimated cost -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                        <input id="estimated_cost" name="estimated_cost" minlength="1" maxlength="10" type="text"
+                            class="validate" required>
+                        <label for="estimated_cost">Estimated Cost</label>
+                    </div>
                 </div>
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt">Time Estimate</i>
-                    <input id="time-estimate" name="time-estimate" type="text" class="validate">
-                    <label for="time-estimate">Time Estimate</label>
+                <!-- estimated time -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                        <input id="estimated_time" name="estimated_time" minlength="1" maxlength="10" type="text"
+                            class="validate" required>
+                        <label for="estimated_time">Estimated Time</label>
+                    </div>
                 </div>
-                <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt light-green-text">Due Date</i>
-                    <input id="due_date" name="due_date" type="text" class="datepicker validate" required>
-                    <label for="due_date">Due Date</label>
+                <!-- due date picker -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-calendar-alt prefix light-green-text text-darken-4"></i>
+                        <input id="due_date" name="due_date" type="text" class="datepicker validate" required>
+                        <label for="due_date">Due Date</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <!-- Switch -->
-                    <div class="switch">
-                        <i class="fas fa-exclamation-circle prefix light-green-text"></i>
-                        <label for="make-public">
-                            <input type="checkbox" id="make-public" name="make-public">
-                            <span class="lever"></span>
-                            Make Public
-                        </label>
+
+                <!-- submit button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large purple darken-1 text-shadow">
+                            Add Task <i class="fas fa-plus-square right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
 
-    <button type="submit" class="light-green btn text-shadow">
-        <i class="far fa-hand-point-right"></i>Submit
-    </button>
 </body>
 {% endblock %}

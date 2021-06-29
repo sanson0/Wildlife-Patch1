@@ -1,7 +1,7 @@
 import os
 from flask import (
     Flask, flash, render_template, redirect,
-     request, session, url_for)
+    request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -113,8 +113,21 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/addownproject")
+@app.route("/addownproject", methods=["GET", "POST"])
 def addownproject():
+    if request.method == "POST":
+        task = {
+            "category_name": request.form.get("category_name"),
+            "task_name": request.form.get("task_name"),
+            "task_description": request.form.get("task_description"),
+            "estimated_cost": request.form.get("estimated_cost"),
+            "estimated_time": request.form.get("estimated_time"),
+            "due_date": request.form.get("due_date"),
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.insert_one(task)
+        flash("Task Successfully Added")
+        
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("addownproject.html", categories=categories)
 
