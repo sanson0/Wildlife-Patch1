@@ -201,3 +201,19 @@ input {
   font-weight: 700;
   text-align: center;  
 }
+/* Add category page */
+#add-category-background {
+    background-color: yellow;
+}
+#reset-button {
+  background-color: brown;
+  color: #ffffff;
+  height: 36px;
+  width: 120px;
+  border-radius: 2px;
+  float: left;
+  margin-left: 20px;
+  padding-top: 5px;
+  padding-left: 40px;
+}
+}
