@@ -132,18 +132,31 @@ def addownproject():
     return render_template("addownproject.html", categories=categories)
 
 
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
+
+
 @app.route("/delete_task/<task_id>")
 def delete_task(task_id):
     mongo.db.tasks.remove({"_id": ObjectId(task_id)})
     flash("Task Successfully Deleted")
-    return redirect(url_for("tasks"))
+    return redirect(url_for("get_tasks"))
 
 
-#@app.route("/delete_category/<category_id>")
-#def delete_category(category_id):
- #   mongo.db.categories.remove({"_id": ObjectId(category_id)})
-  #  flash("Category Successfully Deleted")
-  #  return redirect(url_for("get_categories"))
+@app.route("/delete_project/<peoplesproject_id>")
+def delete_project(peoplesproject_id):
+    mongo.db.peoplesprojects.remove({"_id": ObjectId(peoplesproject_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("get_peoplesprojects"))
+
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Category Successfully Deleted")
+    return redirect(url_for("get_categories"))
 
 
 if __name__ == "__main__":

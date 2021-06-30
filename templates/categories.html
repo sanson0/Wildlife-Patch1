@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<body id="bug-shelter">
+<body id="surveys-sunflower">
     <header>
-        <div id="project-title">
-            <h2>People's Projects</h2>
+        <div id="survey-title">
+            <h1>Manage Categories</h1>
         </div>
         <!--Nav bar from Materialize-->
         <!-- mobile sidenav -->
-        <nav class="peoplesprojects-bar">
+        <nav class="survey-bar">
             <div class="nav-wrapper">
+
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
@@ -59,51 +60,21 @@
             </button>
         </div>
     </div>
-    <button class="btn-large green">Add category</button>
-    <button class="btn-large green">Edit category</button>
-    <button class="btn-large red lighten-1">Delete category</button>
     <div class="row">
-        <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
-            {% for peoplesproject in peoplesprojects %}
-            <li>
-                <div class="collapsible-header white-text brown darken-1 text-shadow row">
-                    <div>
-                        <i class="fas fa-caret-down"></i>
-                    </div>
-                    <div class="col s9">
-                        <img src="{{ peoplesproject.url }}" alt="{{ peoplesproject.alt }}" height="40" width="auto">
-                        <strong>{{ peoplesproject.category_name }}</strong>
-                    </div>
+        {% for category in categories %}
+        <div class="col s12 m3">
+            <div class="card brown lighten-1 darken-4 text-shadow center-align">
+                <div class="card-content white-text">
+                    <span class="card-title">{{ category.category_name }}</span>
                 </div>
-                <div class="collapsible-body grey-collapsible">
-                    <div class="row">
-                        <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
-                            <li>
-                                <div class="collapsible-header white-text brown darken-1 text-shadow row">
-                                    <div>
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                    <div class="col s9">
-                                        <strong>{{ peoplesproject.task_name }}</strong>
-                                    </div>
-                                </div>
-                                <div class="collapsible-body grey-collapsible">
-                                    <strong>{{ peoplesproject.task_name }}</strong>
-                                    <p>description</p>
-                                    <p><em>by: created by</em></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <button class="btn-small green add-own"><a href="{{ url_for('addownproject') }}">Add Own
-                            Project</a></button>
-                    <button class="btn-small green">Edit project</button>
-                    <button class="btn-small red lighten-1"><a href="{{ url_for('delete_project', peoplesproject_id=peoplesproject._id) }}">Delete project</a></button>
+                <div class="card-action">
+                    Edit
+                    <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn deep-orange lighten-1">Delete</a>
                 </div>
-            </li>
-            {% endfor %}
-        </ul>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-
 </body>
+
 {% endblock %}
