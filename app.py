@@ -125,11 +125,25 @@ def addownproject():
             "due_date": request.form.get("due_date"),
             "created_by": session["user"]
         }
-        mongo.db.tasks.insert_one(task)
+        mongo.db.peoplesprojects.insert_one(task)
         flash("Task Successfully Added")
         
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("addownproject.html", categories=categories)
+
+
+@app.route("/delete_task/<task_id>")
+def delete_task(task_id):
+    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("tasks"))
+
+
+#@app.route("/delete_category/<category_id>")
+#def delete_category(category_id):
+ #   mongo.db.categories.remove({"_id": ObjectId(category_id)})
+  #  flash("Category Successfully Deleted")
+  #  return redirect(url_for("get_categories"))
 
 
 if __name__ == "__main__":

@@ -181,17 +181,7 @@ input {
   font-weight: 700;
   text-align: center;
 }
-/* Projects page */
-.project-bar {
-  background-color: rgb(63, 5, 5);
-}
-#project-background {
-  background-color: rgb(192, 247, 192);
-}
-#projects-title {
-  font-weight: 700;
-  text-align: center;  
-}
+
 /* Logout page */
 .logout-bar {
   background-color: darkblue;
@@ -214,14 +204,7 @@ input {
 .yellow-collapsible {
   background-color: lemonchiffon;
 }
-/* recent project page */
-#recent-project {
-  background-color: greenyellow;
-}
-#recentprojects-title {
-  font-weight: 700;
-  text-align: center;   
-}
+
 .white-collapsible {
   background-color: whitesmoke;
 }
