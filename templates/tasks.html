@@ -1,102 +1,109 @@
 {% extends "base.html" %}
 {% block content %}
+
 <body id="wild-garden">
-    
-   <header>
-     <div id="people-projects">
-       <h1>Wildlife Patch</h1>
-     </div>
-    <!--Nav bar from Materialize-->
-    <!-- mobile sidenav -->
-    <nav class="home-bar">
-    <div class="nav-wrapper">
-      
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
-        <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
-        <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
-        {% if session.user %}
-        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-        <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
-        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-        {% else %}
-        <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
-        <li><a href="{{ url_for('login') }}">Log In</a></li>
-        {% endif %}
-      </ul>
+
+    <header>
+        <div id="people-projects">
+            <h1>Wildlife Patch</h1>
+        </div>
+        <!--Nav bar from Materialize-->
+        <!-- mobile sidenav -->
+        <nav class="home-bar">
+            <div class="nav-wrapper">
+
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
+                    <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+                    <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+                    {% if session.user %}
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
+            <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+            <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+            {% if session.user %}
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+            <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            {% endif %}
+        </ul>
+        <p id="login-statement">Manage your projects or contribute by logging in</p>
+        <div id="space"></div>
+    </header>
+    <div class="row">
+        <div class="input-field col s10 m10 offset-s1 offset-m1">
+            <i class="fas fa-search prefix light-green-text text-darken-4"></i>
+            <input type="text" name="query" id="query" minlength="3" class="validate" required>
+            <label for="query">Search Categories</label>
+        </div>
+        <div>
+            <div id="reset-buttn">
+                Reset
+            </div>
+            <button type="submit" class="light-green btn text-shadow">
+                <i class="fas fa-search left"></i> Search
+            </button>
+        </div>
     </div>
-  </nav>
-  <ul class="sidenav" id="mobile-demo">
-        <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
-        <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
-        <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
-        {% if session.user %}
-        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-        <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
-        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-        {% else %}
-        <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
-        <li><a href="{{ url_for('login') }}">Log In</a></li>
-        {% endif %}
-  </ul>
-    <p id="login-statement">Manage your projects or contribute by logging in</p>
-    <div id="space"></div>
-</header>
-<div class="row">
-  <div class="input-field col s10 m10 offset-s1 offset-m1">
-    <i class="fas fa-search prefix light-green-text text-darken-4"></i>
-      <input type="text" name="query" id="query" minlength="3" class="validate" required>
-      <label for="query">Search Categories</label>
-  </div>
-  <div>
-      <div id="reset-buttn">
-        Reset
-      </div>
-      <button type="submit" class="light-green btn text-shadow">
-        <i class="fas fa-search left"></i> Search
-      </button>
-  </div>
-  </div>
-<!--categories-->
-<div class="row">
-    <ul class="collapsible green-collapsible col s9 offset-s1 m9 offset-m1">
-        {% for task in tasks %}
-        <li>
-            <div class="collapsible-header white-text green darken-1 text-shadow row">
-                <div>
-                    <i class="fas fa-caret-down"></i>
+    <button class="btn-large green">Add category</button>
+    <button class="btn-large green">Edit category</button>
+    <button class="btn-large red lighten-1">Delete category</button>
+    <!--categories-->
+    <div class="row">
+        <ul class="collapsible green-collapsible col s9 offset-s1 m9 offset-m1">
+            {% for task in tasks %}
+            <li>
+                <div class="collapsible-header white-text green darken-1 text-shadow row">
+                    <div>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                    <div class="col s9">
+                        <img src="{{ task.url }}" alt="{{ task.alt }}" height="40" width="auto">
+                        <strong>{{ task.category_name }}</strong>
+                    </div>
                 </div>
-                <div class="col s9">
-                    <img src="{{ task.url }}" alt="{{ task.alt }}"
-                        height="40" width="auto">
-                    <strong>{{ task.category_name }}</strong>
-                </div>
-            </div>
-            <div class="collapsible-body green-collapsible">
-                <div class="row">
-                    <ul class="green-collapsible collapsible col s9 m9 offset-s1 m9 offset-m1">
-                        <li>
-                            <div class="collapsible-header white-text green darken-1 text-shadow row">
-                                <div>
-                                    <i class="fas fa-caret-down"></i>
+                <div class="collapsible-body green-collapsible">
+                    <div class="row">
+                        <ul class="green-collapsible collapsible col s9 m9 offset-s1 m9 offset-m1">
+                            <li>
+                                <div class="collapsible-header white-text green darken-1 text-shadow row">
+                                    <div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                    <div class="col s9">
+                                        <strong>{{ task.task_name }}</strong>
+                                    </div>
                                 </div>
-                                <div class="col s9">
+                                <div class="collapsible-body green-collapsible">
                                     <strong>{{ task.task_name }}</strong>
+                                    <p>{{ task.task_description }}</p>
+                                    <p><em>{{ task.created_by }}</em></p>
                                 </div>
-                            </div>
-                            <div class="collapsible-body green-collapsible">
-                                <strong>{{ task.task_name }}</strong>
-                                <p>{{ task.task_description }}</p>
-                                <p><em>{{ task.created_by }}</em></p>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                        <button class="btn-small green add-own"><a href="{{ url_for('addownproject') }}">Add Own
+                                Project</a></button>
+                        <button class="btn-small green">Edit project</button>
+                        <button class="btn-small red lighten-1">Delete project</button>
+                    </div>
                 </div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 {% endblock %}

@@ -57,6 +57,9 @@
             </button>
         </div>
     </div>
+    <button class="btn-large green">Add category</button>
+    <button class="btn-large green">Edit category</button>
+    <button class="btn-large red lighten-1">Delete category</button>
     <div class="row">
         <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
             {% for peoplesproject in peoplesprojects %}
@@ -74,7 +77,6 @@
                 <div class="collapsible-body grey-collapsible">
                     <div class="row">
                         <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
-
                             <li>
                                 <div class="collapsible-header white-text brown darken-1 text-shadow row">
                                     <div>
@@ -92,6 +94,9 @@
                             </li>
                         </ul>
                     </div>
+    <button class="btn-small green add-own"><a href="{{ url_for('addownproject') }}">Add Own Project</a></button>
+    <button class="btn-small green">Edit project</button>
+    <button class="btn-small red lighten-1">Delete project</button>
                 </div>
             </li>
             {% endfor %}
