@@ -1,24 +1,23 @@
-h1 {
-    margin: auto;
+#base-background {
+  background-color: greenyellow;
 }
 /*  Home page */
+#home-title {
+  text-align: center;
+  color: black;
+  font-weight: 700;
+}
 #wild-garden {
   background-image: url('https://cdn.pixabay.com/photo/2019/04/21/01/12/chrysanthemum-4143241__340.jpg');
   background-repeat: repeat-y;
   background-size: cover;
-  width: 100%
+  width: 100%;
+  border: solid black 2px;
 }
 .collapsible-body {
 background-color: greenyellow;
 }
-#people-projects {
-  color: white;
-  text-align: center;
-  text-decoration: underline;
-}
-.home-bar {
-  background-color: rgb(206, 119, 119);
-}
+
 #reset-buttn{
   background-color: rgb(206, 119, 119);
   color: #ffffff;
@@ -38,7 +37,9 @@ background-color: greenyellow;
   background-image: url('https://cdn.pixabay.com/photo/2016/09/04/12/05/sun-flower-1643795_960_720.jpg');
   background-repeat: repeat-y;
   background-size: cover;
-  width: 100%
+  width: 100%;
+  height: 500px;
+  border: solid black 2px;
 }
 .green-collapsible {
     background-color: greenyellow;
@@ -46,19 +47,22 @@ background-color: greenyellow;
 .survey-link a {
     color: white;
     text-decoration: underline;
+    font-size: large;
 }
 
 .survey-link {
-  width: 300px;
-  height: 20px;
+  width: 400px;
+  height: 25px;
   border-radius: 5px;
   background-color: brown;
+  margin-left: 30px;
 }
 .short {
   width: 160px;
 }
 #words {
   margin-top: 15px;
+  margin-left: 30px;
   width: 150px;
   height: auto;
   font-weight: 700;
@@ -71,7 +75,7 @@ background-color: greenyellow;
 .survey-bar {
   background-color: brown;
 }
-.survey-title {
+#survey-title {
   font-weight: 700;
   text-align: center;
 }
@@ -89,19 +93,18 @@ background-color: greenyellow;
   background-image: url(https://cdn.pixabay.com/photo/2018/04/22/11/05/background-3340740_960_720.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%
+  width: 100%;
+  border: solid black 2px;
 }
 .grey-collapsible {
   background-color: lightgrey;
 }
-#project-title {
-  width: 400px;
-  height: 60px;
-  border-radius: 5px;
-  background-color: rgb(75, 43, 4);
-  color: whitesmoke;
-  margin: auto;
+#people-title {
+  color: black;
+  text-align: center;
+  font-weight: 700;
 }
+
 .peoplesprojects-bar {
   background-color: darkolivegreen;
 }
@@ -110,7 +113,8 @@ background-color: greenyellow;
    background-image: url(https://cdn.pixabay.com/photo/2018/07/29/21/32/flowers-3571119_960_720.jpg);
   background-repeat: repeat-y;
   background-size: cover;
-  width: 100%
+  width: 100%;
+  border: solid black 2px;
 }
 .createaccount-bar {
   background-color: darkred;
@@ -133,7 +137,8 @@ input {
    background-image: url(https://cdn.pixabay.com/photo/2018/07/15/00/39/flowers-3538726_960_720.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%
+  width: 100%;
+  border: solid black 2px;
 }
 .login-bar {
   background-color: darkgreen;
@@ -171,9 +176,7 @@ input {
   margin: auto;
 }
 /* Profile page */
-.profile-bar {
-  background-color: darkolivegreen;
-}
+
 #profile-background {
   background-color: lemonchiffon;
 }

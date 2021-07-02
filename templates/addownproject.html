@@ -1,50 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+<h3 id="survey-title">Add Project</h3>
+<section id="add-category_background">
 
-<body id="add-category_background">
-    <header>
-        <div id="addproject-title">
-            <h1>Add Project</h1>
-        </div>
-        <!--Nav bar from Materialize-->
-        <!-- mobile sidenav -->
-        <nav class="addown-bar">
-            <div class="nav-wrapper">
-
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
-                    <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
-                    <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
-                    {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
-                    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% else %}
-                    <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
-            <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
-            <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
-            {% if session.user %}
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
-            <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-            {% else %}
-            <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            {% endif %}
-        </ul>
-        <p id="login-statement">Manage your projects or contribute by logging in</p>
-        <div id="space"></div>
-    </header>
     <h3 class="light-green-text text-darken-4 center-align">Add Project</h3>
 
     <div class="row card-panel grey lighten-5">
@@ -133,5 +91,5 @@
         </form>
     </div>
 
-</body>
+</section>
 {% endblock %}
