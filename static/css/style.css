@@ -1,12 +1,14 @@
 #base-background {
   background-color: greenyellow;
 }
+
 /*  Home page */
 #home-title {
   text-align: center;
   color: black;
   font-weight: 700;
 }
+
 #wild-garden {
   background-image: url('https://cdn.pixabay.com/photo/2019/04/21/01/12/chrysanthemum-4143241__340.jpg');
   background-repeat: repeat-y;
@@ -14,11 +16,12 @@
   width: 100%;
   border: solid black 2px;
 }
+
 .collapsible-body {
-background-color: greenyellow;
+  background-color: greenyellow;
 }
 
-#reset-buttn{
+#reset-buttn {
   background-color: rgb(206, 119, 119);
   color: #ffffff;
   height: 36px;
@@ -29,56 +32,51 @@ background-color: greenyellow;
   padding-top: 5px;
   padding-left: 40px;
 }
+
 .input-field {
-  background-color:rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
+
 /* Wildlife surveys page */
-#surveys-sunflower {
-  background-image: url('https://cdn.pixabay.com/photo/2016/09/04/12/05/sun-flower-1643795_960_720.jpg');
-  background-repeat: repeat-y;
-  background-size: cover;
-  width: 100%;
-  height: 500px;
-  border: solid black 2px;
-}
-.green-collapsible {
-    background-color: greenyellow;
-}
+
 .survey-link a {
-    color: white;
-    text-decoration: underline;
-    font-size: large;
+  color: white;
+  text-decoration: underline;
+  font-size: large;
 }
 
 .survey-link {
-  width: 400px;
-  height: 25px;
   border-radius: 5px;
   background-color: brown;
-  margin-left: 30px;
+  margin-top: 30px;
+  padding-left: 20px;
 }
+
 .short {
-  width: 160px;
+  width: 200px;
 }
-#words {
-  margin-top: 15px;
-  margin-left: 30px;
-  width: 150px;
+
+#survey-words {
+  margin-top: 25px;
   height: auto;
   font-weight: 700;
+  color: white;
 }
 
 #space {
-  height: 100px;
+  height: 40px;
   width: 100px;
 }
+
 .survey-bar {
   background-color: brown;
 }
+
 #survey-title {
   font-weight: 700;
   text-align: center;
 }
+
 #login-statement {
   color: white;
   width: 200px;
@@ -86,8 +84,31 @@ background-color: greenyellow;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
   padding-left: 20px;
-  float: right
+  float: right;
+  margin-right: 20px;
 }
+
+@media screen and (min-width: 601px) {
+  #surveys-sunflower {
+    background-image: url('https://cdn.pixabay.com/photo/2016/09/04/12/05/sun-flower-1643795_960_720.jpg');
+    background-repeat: repeat-y;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    border: solid black 2px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #surveys-sunflower {
+    background-image: none;
+    background-color: yellow;
+    border: solid black 2px;
+    margin-bottom: 20px;
+  }
+}
+
 /*  People's projects */
 #bug-shelter {
   background-image: url(https://cdn.pixabay.com/photo/2018/04/22/11/05/background-3340740_960_720.jpg);
@@ -96,9 +117,11 @@ background-color: greenyellow;
   width: 100%;
   border: solid black 2px;
 }
+
 .grey-collapsible {
   background-color: lightgrey;
 }
+
 #people-title {
   color: black;
   text-align: center;
@@ -108,17 +131,20 @@ background-color: greenyellow;
 .peoplesprojects-bar {
   background-color: darkolivegreen;
 }
+
 /* Create account page */
 #account-pic {
-   background-image: url(https://cdn.pixabay.com/photo/2018/07/29/21/32/flowers-3571119_960_720.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2018/07/29/21/32/flowers-3571119_960_720.jpg);
   background-repeat: repeat-y;
   background-size: cover;
   width: 100%;
   border: solid black 2px;
 }
+
 .createaccount-bar {
   background-color: darkred;
 }
+
 #create-account {
   background-color: rgba(0, 0, 0, 0.8);
   width: 450px;
@@ -129,20 +155,38 @@ background-color: greenyellow;
   border-radius: 5px;
   margin: auto;
 }
+
 input {
-    color: aliceblue;
+  color: aliceblue;
 }
+
+#create-account-message {
+  background-color: aliceblue;
+  font-size: large;
+  font-weight: 600;
+}
+
+#create-button {
+  width: 200px;
+}
+
+#create-submit-border {
+  padding: 3px 3px 3px 3px;
+}
+
 /* Login page */
 #login-pic {
-   background-image: url(https://cdn.pixabay.com/photo/2018/07/15/00/39/flowers-3538726_960_720.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2018/07/15/00/39/flowers-3538726_960_720.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   border: solid black 2px;
 }
+
 .login-bar {
   background-color: darkgreen;
 }
+
 #login-title {
   background-color: rgba(0, 0, 0, 0.8);
   width: 200px;
@@ -153,10 +197,22 @@ input {
   border-radius: 5px;
   margin: auto;
 }
+
+#login-message {
+  background-color: aliceblue;
+  font-size: large;
+  font-weight: 600;
+}
+
+#login-submit-border {
+  padding: 3px 3px 3px 3px;
+}
+
 /* Welcome page */
 .welcome-bar {
   background-color: purple;
 }
+
 #welcome-message {
   height: 100px;
   width: 300px;
@@ -165,6 +221,7 @@ input {
   font-size: 30px;
   text-align: center;
 }
+
 #welcome-title {
   background-color: rgba(0, 0, 0, 0.8);
   width: 300px;
@@ -175,11 +232,13 @@ input {
   border-radius: 5px;
   margin: auto;
 }
+
 /* Profile page */
 
 #profile-background {
   background-color: lemonchiffon;
 }
+
 #profile-title {
   font-weight: 700;
   text-align: center;
@@ -189,6 +248,7 @@ input {
 .logout-bar {
   background-color: darkblue;
 }
+
 #logout-background {
   background-color: lightcyan;
 }
@@ -197,17 +257,21 @@ input {
 .addown-bar {
   background-color: darkslateblue;
 }
+
 #add-project {
   background-color: lightcoral;
 }
+
 #addproject-title {
   font-weight: 700;
-  text-align: center;  
+  text-align: center;
 }
+
 /* Add category page */
 #add-category-background {
-    background-color: yellow;
+  background-color: yellow;
 }
+
 #reset-button {
   background-color: brown;
   color: #ffffff;
@@ -218,4 +282,12 @@ input {
   margin-left: 20px;
   padding-top: 5px;
   padding-left: 40px;
+}
+
+/* categories */
+#categories-border {
+  border: solid black 2px;
+}
+#add-category-button {
+  margin-left: 25px;
 }

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 id="survey-title">Categories</h3>
-<section id="surveys-sunflower">
+<section class="yellow" id="categories-border">
 
     <div class="row">
         <div class="input-field col s10 m10 offset-s1 offset-m1">
@@ -18,11 +18,11 @@
             </button>
         </div>
     </div>
-    <button><a href="{{ url_for('add_category') }}">Add Category</a></li></button>
+    <button id="add-category-button" class="btn brown darken-4"><a href="{{ url_for('add_category') }} " class="white-text">Add Category</a></li></button>
     <div class="row">
         {% for category in categories %}
         <div class="col s12 m3">
-            <div class="card brown lighten-1 darken-4 text-shadow center-align">
+            <div class="card brown darken-4 text-shadow center-align">
                 <div class="card-content white-text">
                     <span class="card-title">{{ category.category_name }}</span>
                 </div>

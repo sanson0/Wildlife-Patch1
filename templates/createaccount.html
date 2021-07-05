@@ -8,16 +8,9 @@
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('createaccount') }}">
         <!--Name-->
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s12">
           <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
           <label for="username">Username</label>
-        </div>
-      </div>
-      <!--???-->
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
         </div>
       </div>
       <!--Password-->
@@ -34,31 +27,19 @@
           <label for="email">Email</label>
         </div>
       </div>
-      <div class="row">
-        <div class="col s12">
-          This is an inline input field:
-          <div class="input-field inline">
-            <input id="email_inline" type="email" class="validate">
-            <label for="email_inline">Email</label>
-            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-          </div>
-        </div>
-      </div>
       <!--Create Account-->
       <div class="row">
-          <button type="submit" class="col s3 btn-large light-green text-shadow">
-              Create Account <i class="fas fa-sign-in-alt"></i>
+          <button type="submit" class="col s3 btn-large white text-shadow black-text" id="create-button">
+              <span id="create-submit-border" class="light-green"> Create Account <i class="fas fa-sign-in-alt"></i></span>
           </button>
       </div>
-      <a href="welcome.html">Welcome User1</a>
-      <a href="welcomeadmin.html">Welcome Admin1</a>
     </form>
   </div>
   <div class="row">
-      <div class="col s8">
+      <div class="col s6 offset-s3" id="create-account-message">
           <p class="center-align">
               Already have an account?
-              <a href="{{ url_for('login') }}" class="light-green-text">Log In</a>
+              <a href="{{ url_for('login') }}" class="light-green black-text">Log In</a>
           </p>
       </div>
   </div>

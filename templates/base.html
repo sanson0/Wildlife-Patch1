@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="static/css/style.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-     referrerpolicy="no-referrer" type="text/css">
-     {% block styles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        referrerpolicy="no-referrer" type="text/css">
+    {% block styles %}
     {% endblock %}
-  <title>Wildlife Patch Home</title>
+    <title>Wildlife Patch Home</title>
 </head>
+
 <body id="base-background">
     <header>
         <!--Nav bar from Materialize-->
@@ -49,7 +52,10 @@
             <li><a href="{{ url_for('login') }}">Log In</a></li>
             {% endif %}
         </ul>
+        {% if session.user %}
+        {% else %}
         <p id="login-statement">Manage your projects or contribute by logging in</p>
+        {% endif %}
         <div id="space"></div>
     </header>
     <section>
@@ -65,13 +71,15 @@
         {% endwith %}
     </section>
     <main class="container">
-    {% block content %}
+        {% block content %}
         {% endblock %}
     </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="static/js/script.js"></script>
     {% block scripts %}
     {% endblock %}
 </body>
+
 </html>
