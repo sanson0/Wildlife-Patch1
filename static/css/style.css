@@ -21,22 +21,12 @@
   background-color: greenyellow;
 }
 
-#reset-buttn {
-  background-color: rgb(206, 119, 119);
-  color: #ffffff;
-  height: 36px;
-  width: 120px;
-  border-radius: 2px;
-  float: left;
-  margin-left: 20px;
-  padding-top: 5px;
-  padding-left: 40px;
-}
-
 .input-field {
   background-color: rgba(0, 0, 0, 0.8);
 }
-
+#no-results-found {
+  background-color: yellowgreen;
+}
 /* Wildlife surveys page */
 
 .survey-link a {
@@ -290,4 +280,5 @@ input {
 }
 #add-category-button {
   margin-left: 25px;
+  margin-top: 25px;
 }

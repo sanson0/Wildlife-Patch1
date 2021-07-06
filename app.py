@@ -27,6 +27,13 @@ def get_tasks():
     return render_template("tasks.html", tasks=tasks)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
+    return render_template("tasks.html", tasks=tasks)
+
+
 @app.route("/surveys")
 def surveys():
     return render_template("surveys.html")
@@ -37,6 +44,16 @@ def get_peoplesprojects():
     peoplesprojects = list(mongo.db.peoplesprojects.find())
     return render_template(
         "peoplesprojects.html", peoplesprojects=peoplesprojects)
+
+
+@app.route("/search_pps", methods=["GET", "POST"])
+def search_pps():
+    query = request.form.get("query")
+    peoplesprojects = list(
+        mongo.db.peoplesprojects.find({"$text": {"$search": query}}))
+    return render_template(
+        "peoplesprojects.html", peoplesprojects=peoplesprojects)
+
 
 
 @app.route("/createaccount", methods=["GET", "POST"])
