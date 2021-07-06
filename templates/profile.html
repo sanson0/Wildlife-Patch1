@@ -10,4 +10,25 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <ul class="col s9 m9 offset-s1 m9 offset-m1">
+        {% for peoplesproject in peoplesprojects %}
+        <li>
+            {% if peoplesproject.created_by == session.user %}
+            <div class="card-panel white-text brown darken-1 text-shadow row">
+                <div class="col s9">
+                    <img src="{{ peoplesproject.url }}" alt="{{ peoplesproject.alt }}" height="40" width="auto">
+                    <strong>{{ peoplesproject.category_name }}</strong><br>
+                    <strong>{{ peoplesproject.task_name }}</strong><br>
+                    <strong>{{ peoplesproject.created_by }}</strong>
+                    <p>description</p>
+                </div>
+            </div>
+            {% else %}
+            {% endif %}
+        </li>
+        {% endfor %}
+        
+    </ul>
+</div>
 {% endblock %}

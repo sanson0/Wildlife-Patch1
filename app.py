@@ -69,7 +69,8 @@ def createaccount():
 
         createaccount = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "email": request.form.get("email")
         }
         mongo.db.users.insert_one(createaccount)
 
@@ -115,9 +116,11 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    peoplesprojects = list(mongo.db.peoplesprojects.find())
     if session["user"]:
-        return render_template("profile.html", username=username)
+
+        return render_template(
+            "profile.html", username=username, peoplesprojects=peoplesprojects)
 
     return redirect(url_for("login"))
 
@@ -153,11 +156,6 @@ def addownproject():
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
-
-
-#@app.route("/add_category")
-#def add_category():
-#    return render_template("add_category.html")
 
 
 @app.route("/add_category", methods=["GET", "POST"])
