@@ -198,6 +198,31 @@ def edit_task(task_id):
     return render_template("edit_task.html", task=task, categories=categories)
 
 
+@app.route("/edit_task_pps/<peoplesproject_id>", methods=["GET", "POST"])
+def edit_task_pps(peoplesproject_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "task_name": request.form.get("task_name"),
+            "task_description": request.form.get("task_description"),
+            "estimated_cost": request.form.get("estimated_cost"),
+            "estimated_time": request.form.get("estimated_time"),
+            "due_date": request.form.get("due_date"),
+            "image_url": request.form.get("image_url"),
+            "image_description": request.form.get("image_description"),
+            "created_by": session["user"]
+        }
+        mongo.db.peoplesprojects.update(
+            {"_id": ObjectId(peoplesproject_id)}, submit)
+        flash("Task Successfully Updated")
+
+    peoplesproject = mongo.db.peoplesprojects.find_one(
+        {"_id": ObjectId(peoplesproject_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template(
+        "edit_task_pps.html", peoplesproject=peoplesproject, categories=categories)
+
+
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
