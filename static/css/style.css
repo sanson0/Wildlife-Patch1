@@ -282,3 +282,6 @@ input {
   margin-left: 25px;
   margin-top: 25px;
 }
+#edit-category-background {
+  background-color: yellow;
+}

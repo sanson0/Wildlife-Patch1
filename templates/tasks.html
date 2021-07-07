@@ -60,11 +60,12 @@
                         </ul>
                         <button class="btn-small green add-own"><a href="{{ url_for('addownproject') }}">Add Own
                                 Project</a></button>
-                        <button class="btn-small green">Edit project</button>
+                        <button class="btn-small green"><a href="{{ url_for('edit_task', task_id=task._id) }}">Edit
+                                project</a></button>
                         <button class="btn-small red lighten-1"><a
                                 href="{{ url_for('delete_task', task_id=task._id) }}">
-                                Delete project</a></button>
-
+                                Delete project</a>
+                        </button>
                     </div>
                 </div>
             </li>
