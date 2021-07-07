@@ -244,18 +244,7 @@ input {
 }
 
 /* Add own project page */
-.addown-bar {
-  background-color: darkslateblue;
-}
 
-#add-project {
-  background-color: lightcoral;
-}
-
-#addproject-title {
-  font-weight: 700;
-  text-align: center;
-}
 
 /* Add category page */
 #add-category-background {
@@ -281,7 +270,4 @@ input {
 #add-category-button {
   margin-left: 25px;
   margin-top: 25px;
-}
-#edit-category-background {
-  background-color: yellow;
 }

@@ -21,12 +21,15 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+
+# load home page
 @app.route("/get_tasks")
 def get_tasks():
     tasks = list(mongo.db.tasks.find())
     return render_template("tasks.html", tasks=tasks)
 
 
+# search function for home page projects
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -34,11 +37,12 @@ def search():
     return render_template("tasks.html", tasks=tasks)
 
 
+# load wildlife surveys page
 @app.route("/surveys")
 def surveys():
     return render_template("surveys.html")
 
-
+# load people's projects page, contributions from other users
 @app.route("/get_peoplesprojects")
 def get_peoplesprojects():
     peoplesprojects = list(mongo.db.peoplesprojects.find())
@@ -46,6 +50,7 @@ def get_peoplesprojects():
         "peoplesprojects.html", peoplesprojects=peoplesprojects)
 
 
+# search function for people's projects
 @app.route("/search_pps", methods=["GET", "POST"])
 def search_pps():
     query = request.form.get("query")
@@ -55,7 +60,7 @@ def search_pps():
         "peoplesprojects.html", peoplesprojects=peoplesprojects)
 
 
-
+# 
 @app.route("/createaccount", methods=["GET", "POST"])
 def createaccount():
     if request.method == "POST":
