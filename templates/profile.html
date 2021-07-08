@@ -10,25 +10,53 @@
         </div>
     </div>
 </div>
+
 <div class="row">
-    <ul class="col s9 m9 offset-s1 m9 offset-m1">
+    <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
         {% for peoplesproject in peoplesprojects %}
         <li>
             {% if peoplesproject.created_by == session.user %}
-            <div class="card-panel white-text brown darken-1 text-shadow row">
+            <div class="collapsible-header white-text brown darken-1 text-shadow row">
+                <div>
+                    <i class="fas fa-caret-down"></i>
+                </div>
                 <div class="col s9">
                     <img src="{{ peoplesproject.url }}" alt="{{ peoplesproject.alt }}" height="40" width="auto">
-                    <strong>{{ peoplesproject.category_name }}</strong><br>
-                    <strong>{{ peoplesproject.task_name }}</strong><br>
-                    <strong>{{ peoplesproject.created_by }}</strong>
-                    <p>description</p>
+                    <strong>{{ peoplesproject.category_name }}</strong>
                 </div>
             </div>
-            {% else %}
+            <div class="collapsible-body grey-collapsible">
+                <div class="row">
+                    <ul class="collapsible grey-collapsible col s9 m9 offset-s1 m9 offset-m1">
+                        <li>
+                            <div class="collapsible-header white-text brown darken-1 text-shadow row">
+                                <div>
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                                <div class="col s9">
+                                    <strong>{{ peoplesproject.task_name }}</strong>
+                                </div>
+                            </div>
+                            <div class="collapsible-body grey-collapsible">
+                                <strong>{{ peoplesproject.task_name }}</strong>
+                                <p>description</p>
+                                <p><em>by: created by</em></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="btn-small green add-own"><a href="{{ url_for('addownproject') }}">Add Own
+                        Project</a></button>
+                <button class="btn-small green"><a
+                        href="{{ url_for('edit_task_pps', peoplesproject_id=peoplesproject._id) }}">Edit
+                        project</a></button>
+                <button class="btn-small red lighten-1"><a
+                        href="{{ url_for('delete_project', peoplesproject_id=peoplesproject._id) }}">Delete
+                        project</a></button>
+            </div>
             {% endif %}
         </li>
         {% endfor %}
-        
     </ul>
 </div>
 {% endblock %}
