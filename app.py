@@ -40,7 +40,23 @@ def search():
 # load wildlife surveys page
 @app.route("/surveys")
 def surveys():
-    return render_template("surveys.html")
+    survey_links = list(mongo.db.survey_links.find())
+    return render_template("surveys.html", survey_links=survey_links)
+
+
+# add link to wildlife surveys page
+@app.route("/add_link", methods=["GET", "POST"])
+def add_link():
+    if request.method == "POST":
+        survey = {
+            "survey_title": request.form.get("survey_title"),
+            "survey_link": request.form.get("survey_link"),
+        }
+        mongo.db.survey_links.insert_one(survey)
+        flash("Link Successfully Added")
+        
+    return render_template("add_link.html")
+
 
 # load people's projects page, contributions from other users
 @app.route("/get_peoplesprojects")
