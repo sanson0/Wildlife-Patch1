@@ -29,12 +29,6 @@
 }
 /* Wildlife surveys page */
 
-.survey-link a {
-  color: white;
-  text-decoration: underline;
-  font-size: large;
-}
-
 .survey-link {
   border-radius: 5px;
   background-color: brown;
@@ -84,7 +78,6 @@
     background-repeat: repeat-y;
     background-size: cover;
     width: 100%;
-    height: 500px;
     border: solid black 2px;
     margin-bottom: 20px;
   }

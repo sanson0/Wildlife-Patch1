@@ -58,6 +58,31 @@ def add_link():
     return render_template("add_link.html")
 
 
+# edit link to wildlife surveys page
+@app.route("/edit_link/<survey_id>", methods=["GET", "POST"])
+def edit_link(survey_id):
+    if request.method == "POST":
+        submit = {
+           "survey_title": request.form.get("survey_title"),
+            "survey_link": request.form.get("survey_link"),
+        }
+        mongo.db.survey_links.update({"_id": ObjectId(survey_id)}, submit)
+        flash("Link Successfully Updated")
+
+    survey = mongo.db.survey_links.find_one({"_id": ObjectId(survey_id)})
+    
+    return render_template("edit_link.html", survey=survey)
+
+
+
+# delete link in the wildlife surveys page
+@app.route("/delete_link/<survey_id>")
+def delete_link(survey_id):
+    mongo.db.survey_links.remove({"_id": ObjectId(survey_id)})
+    flash("Link Successfully Deleted")
+    return redirect(url_for("surveys"))
+
+
 # load people's projects page, contributions from other users
 @app.route("/get_peoplesprojects")
 def get_peoplesprojects():
@@ -76,7 +101,7 @@ def search_pps():
         "peoplesprojects.html", peoplesprojects=peoplesprojects)
 
 
-# 
+# Create an account
 @app.route("/createaccount", methods=["GET", "POST"])
 def createaccount():
     if request.method == "POST":
@@ -103,6 +128,7 @@ def createaccount():
     return render_template("createaccount.html")
 
 
+# login to account
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -132,6 +158,7 @@ def login():
     return render_template("login.html")
 
 
+# load profile page and display own projects only
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -146,6 +173,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# logout of account
 @app.route("/logout")
 def logout():
     # remove user from session cookies
@@ -154,6 +182,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# add own project to people's project page
 @app.route("/addownproject", methods=["GET", "POST"])
 def addownproject():
     if request.method == "POST":
@@ -173,12 +202,14 @@ def addownproject():
     return render_template("addownproject.html", categories=categories)
 
 
+#load categories page (if admin)
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
 
+#add category (if admin)
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -192,6 +223,7 @@ def add_category():
     return render_template("add_category.html")
 
 
+# edit a project (if admin)
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
     if request.method == "POST":
@@ -214,6 +246,7 @@ def edit_task(task_id):
     return render_template("edit_task.html", task=task, categories=categories)
 
 
+# edit a project (if admin or if project is your own)
 @app.route("/edit_task_pps/<peoplesproject_id>", methods=["GET", "POST"])
 def edit_task_pps(peoplesproject_id):
     if request.method == "POST":
@@ -239,6 +272,7 @@ def edit_task_pps(peoplesproject_id):
         "edit_task_pps.html", peoplesproject=peoplesproject, categories=categories)
 
 
+#edit categories (if admin)
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -253,7 +287,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
-
+#delete project (if admin)
 @app.route("/delete_task/<task_id>")
 def delete_task(task_id):
     mongo.db.tasks.remove({"_id": ObjectId(task_id)})
@@ -261,6 +295,7 @@ def delete_task(task_id):
     return redirect(url_for("get_tasks"))
 
 
+#delete project (if admin or project is your own)
 @app.route("/delete_project/<peoplesproject_id>")
 def delete_project(peoplesproject_id):
     mongo.db.peoplesprojects.remove({"_id": ObjectId(peoplesproject_id)})
@@ -268,6 +303,7 @@ def delete_project(peoplesproject_id):
     return redirect(url_for("get_peoplesprojects"))
 
 
+#delete category (if admin)
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})

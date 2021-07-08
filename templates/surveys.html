@@ -2,18 +2,21 @@
 {% block content %}
 <h3 id="survey-title">Wildlife Surveys</h3>
 <section id="surveys-sunflower">
+  {% if session.user|lower == "Admin"|lower %}
+  <button class="btn orange"><a class="white-text" href="{{ url_for('add_link') }}">Add Link</a></button>
+  {% endif %}
+  {% for survey in survey_links %}
   <div class="row">
-    {% for survey_lk in survey_links %}
     <div class="survey-link col s10 offset-s1 m5 offset-m1">
-      <a href="{{survey_lk.survey_link}}">{{ survey_lk.survey_title }}</a><br>
+      <a class="white-text" href="{{survey.survey_link}}">{{ survey.survey_title }}</a><br>
     </div>
-    {% endfor %}
   </div>
+  {% if session.user|lower == "Admin"|lower %}
+  <button class="btn green"><a class="white-text" href="{{ url_for('edit_link', survey_id=survey._id) }}">Edit Link</a></button>
+  <button class="btn deep-orange"><a class="white-text" href="{{ url_for('delete_link', survey_id=survey._id) }}">Delete</a></button>
+  {% endif %}
+  {% endfor %}
   <p id="survey-words">Help conservation and contribute to science by providing data for wildlife and plant surveys.
   </p>
-  <button><a href="{{ url_for('add_link') }}">Add Link</a></button>
-  <button><a href="">Edit Link</a></button>
-  <button><a href="">Delete</a></button>
-  
 </section>
 {% endblock %}
