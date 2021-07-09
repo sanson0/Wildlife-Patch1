@@ -2,6 +2,20 @@
   background-color: greenyellow;
 }
 
+#login-statement {
+  color: white;
+  width: 200px;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding-left: 20px;
+  float: right;
+  margin-right: 20px;
+}
+#space {
+  height: 40px;
+  width: 100px;
+}
 /*  Home page */
 #home-title {
   text-align: center;
@@ -17,15 +31,12 @@
   border: solid black 2px;
 }
 
-.collapsible-body {
-  background-color: greenyellow;
-}
-
 .input-field {
   background-color: rgba(0, 0, 0, 0.8);
 }
 #no-results-found {
   background-color: yellowgreen;
+  border: solid black 2px;
 }
 /* Wildlife surveys page */
 
@@ -36,40 +47,9 @@
   padding-left: 20px;
 }
 
-.short {
-  width: 200px;
-}
-
-#survey-words {
-  margin-top: 25px;
-  height: auto;
-  font-weight: 700;
-  color:black;
-}
-
-#space {
-  height: 40px;
-  width: 100px;
-}
-
-.survey-bar {
-  background-color: brown;
-}
-
 #survey-title {
   font-weight: 700;
   text-align: center;
-}
-
-#login-statement {
-  color: white;
-  width: 200px;
-  height: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 5px;
-  padding-left: 20px;
-  float: right;
-  margin-right: 20px;
 }
 
 @media screen and (min-width: 601px) {
@@ -101,42 +81,23 @@
   border: solid black 2px;
 }
 
-.grey-collapsible {
-  background-color: lightgrey;
-}
-
 #people-title {
   color: black;
   text-align: center;
   font-weight: 700;
 }
 
-.peoplesprojects-bar {
-  background-color: darkolivegreen;
-}
-
 /* Create account page */
+#account-title {
+  font-weight: 700;
+  text-align: center;
+}
 #account-pic {
   background-image: url(https://cdn.pixabay.com/photo/2018/07/29/21/32/flowers-3571119_960_720.jpg);
   background-repeat: repeat-y;
   background-size: cover;
   width: 100%;
   border: solid black 2px;
-}
-
-.createaccount-bar {
-  background-color: darkred;
-}
-
-#create-account {
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 450px;
-  height: auto;
-  color: white;
-  font-weight: 700;
-  text-align: center;
-  border-radius: 5px;
-  margin: auto;
 }
 
 input {
@@ -166,19 +127,9 @@ input {
   border: solid black 2px;
 }
 
-.login-bar {
-  background-color: darkgreen;
-}
-
 #login-title {
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 200px;
-  height: auto;
-  color: white;
   font-weight: 700;
   text-align: center;
-  border-radius: 5px;
-  margin: auto;
 }
 
 #login-message {
@@ -191,72 +142,11 @@ input {
   padding: 3px 3px 3px 3px;
 }
 
-/* Welcome page */
-.welcome-bar {
-  background-color: purple;
-}
-
-#welcome-message {
-  height: 100px;
-  width: 300px;
-  background-color: white;
-  margin: auto;
-  font-size: 30px;
-  text-align: center;
-}
-
-#welcome-title {
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 300px;
-  height: auto;
-  color: white;
-  font-weight: 700;
-  text-align: center;
-  border-radius: 5px;
-  margin: auto;
-}
-
-/* Profile page */
-
-#profile-background {
-  background-color: lemonchiffon;
-}
-
-#profile-title {
-  font-weight: 700;
-  text-align: center;
-}
-
-/* Logout page */
-.logout-bar {
-  background-color: darkblue;
-}
-
-#logout-background {
-  background-color: lightcyan;
-}
-
-/* Add own project page */
-
-
-/* Add category page */
-#add-category-background {
-  background-color: yellow;
-}
-
-#reset-button {
-  background-color: brown;
-  color: #ffffff;
-  height: 36px;
-  width: 120px;
-  border-radius: 2px;
-  float: left;
-  margin-left: 20px;
-  padding-top: 5px;
-  padding-left: 40px;
-}
-
 /* categories */
+#categories-title {
+  font-weight: 700;
+  text-align: center;
+}
 #categories-border {
   border: solid black 2px;
 }

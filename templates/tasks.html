@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<div id="people-projects">
-    <h1 id=home-title>Wildlife Patch</h1>
-</div>
+<h1 id=home-title>Wildlife Patch</h1>
+
 <section id="wild-garden">
 
     <div class="row">
@@ -27,7 +26,7 @@
     <!--categories-->
     <div class="row">
         {% if tasks|length > 0 %}
-        <ul class="collapsible green-collapsible col s9 offset-s1 m9 offset-m1">
+        <ul class="collapsible light-green col s9 offset-s1 m9 offset-m1">
             {% for task in tasks %}
             {% if task.on_homepage == "on" %}
             <li>
@@ -40,9 +39,9 @@
                         <strong>{{ task.category_name }}</strong>
                     </div>
                 </div>
-                <div class="collapsible-body green-collapsible">
+                <div class="collapsible-body">
                     <div class="row">
-                        <ul class="green-collapsible collapsible col s9 m9 offset-s1 m9 offset-m1">
+                        <ul class="collapsible col s9 m9 offset-s1 m9 offset-m1">
                             <li>
                                 <div class="collapsible-header white-text green darken-1 text-shadow row">
                                     <div>
@@ -52,10 +51,10 @@
                                         <strong>{{ task.task_name }}</strong>
                                     </div>
                                 </div>
-                                <div class="collapsible-body green-collapsible">
-                                    <strong>{{ task.task_name }}</strong>
-                                    <strong>{{ task.task_description }}</strong>
-                                    <strong>{{ task.created_by }}</strong>
+                                <div class="collapsible-body">
+                                    <strong>Project Name: {{ task.task_name }}</strong><br>
+                                    <strong>Description: {{ task.task_description }}</strong><br>
+                                    <strong>Created By: {{ task.created_by }}</strong>
                                 </div>
                             </li>
                         </ul>
@@ -64,12 +63,12 @@
                 </div>
             </li>
             {% if session.user|lower == "Admin"|lower %}
-            <button class="btn-small green add-own"><a href="{{ url_for('addownproject') }}">Add Own
+            <button class="btn-small green add-own"><a class="white-text" href="{{ url_for('addownproject') }}">Add Own
                     Project</a></button>
-            <button class="btn-small green"><a href="{{ url_for('edit_task', task_id=task._id) }}">Edit
+            <button class="btn-small green"><a class="white-text" href="{{ url_for('edit_task', task_id=task._id) }}">Edit
                     project</a></button>
             <!-- Dropdown Trigger -->
-            <button class='dropdown-trigger deep-orange btn-small' data-target='dropdown1'>Delete Project</button>
+            <button class='dropdown-trigger deep-orange btn-small white-text' data-target='dropdown1'>Delete Project</button>
 
             <!-- Dropdown Structure -->
 

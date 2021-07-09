@@ -185,7 +185,7 @@ def addownproject():
             "due_date": request.form.get("due_date"),
             "created_by": session["user"]
         }
-        mongo.db.peoplesprojects.insert_one(task)
+        mongo.db.tasks.insert_one(task)
         flash("Task Successfully Added")
         
     categories = mongo.db.categories.find().sort("category_name", 1)
