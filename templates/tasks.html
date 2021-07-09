@@ -29,6 +29,7 @@
         {% if tasks|length > 0 %}
         <ul class="collapsible green-collapsible col s9 offset-s1 m9 offset-m1">
             {% for task in tasks %}
+            {% if task.on_homepage == "on" %}
             <li>
                 <div class="collapsible-header white-text green darken-1 text-shadow row">
                     <div>
@@ -53,8 +54,8 @@
                                 </div>
                                 <div class="collapsible-body green-collapsible">
                                     <strong>{{ task.task_name }}</strong>
-                                    <p>{{ task.task_description }}</p>
-                                    <p><em>{{ task.created_by }}</em></p>
+                                    <strong>{{ task.task_description }}</strong>
+                                    <strong>{{ task.created_by }}</strong>
                                 </div>
                             </li>
                         </ul>
@@ -77,6 +78,7 @@
                 <li><a href="{{ url_for('delete_task', task_id=task._id) }}">Delete</a></li>
                 <li><a href="{{ url_for('get_tasks') }}">Cancel</a></li>
             </ul>
+            {% endif %}
             {% endif %}
             {% endfor %}
         </ul>

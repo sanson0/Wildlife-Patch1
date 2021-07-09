@@ -75,6 +75,7 @@
                         <label for="image_url">Add image as a url</label>
                     </div>
                 </div>
+                <!-- image description-->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
@@ -83,6 +84,26 @@
                         <label for="image_description">Add image description</label>
                     </div>
                 </div>
+                <!-- toggle switch -->
+                {% if session.user|lower == "Admin"|lower %}
+                <!-- on homepage toggle -->
+			<div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+                        <i class="fas fa-exclamation-circle prefix green-text text-darken-4"></i>
+						<label for="on_homepage">
+                            {% if task.is_urgent == "on" %}
+                                <input type="checkbox" id="on_homepage" name="on_homepage" checked>
+                            {% else %}
+                                <input type="checkbox" id="on_homepage" name="on_homepage">
+                            {% endif %}
+                            <span class="lever"></span>
+                            On Home Page
+                        </label>
+					</div>
+				</div>
+			</div>
+                  {% endif %}
                 <!-- submit button -->
                 <div class="row">
                     <div class="col s12 center-align">

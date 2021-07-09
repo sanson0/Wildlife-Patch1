@@ -86,19 +86,9 @@ def delete_link(survey_id):
 # load people's projects page, contributions from other users
 @app.route("/get_peoplesprojects")
 def get_peoplesprojects():
-    peoplesprojects = list(mongo.db.peoplesprojects.find())
+    tasks = list(mongo.db.tasks.find())
     return render_template(
-        "peoplesprojects.html", peoplesprojects=peoplesprojects)
-
-
-# search function for people's projects
-@app.route("/search_pps", methods=["GET", "POST"])
-def search_pps():
-    query = request.form.get("query")
-    peoplesprojects = list(
-        mongo.db.peoplesprojects.find({"$text": {"$search": query}}))
-    return render_template(
-        "peoplesprojects.html", peoplesprojects=peoplesprojects)
+        "peoplesprojects.html", tasks=tasks)
 
 
 # Create an account
@@ -164,11 +154,11 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    peoplesprojects = list(mongo.db.peoplesprojects.find())
+    tasks = list(mongo.db.tasks.find())
     if session["user"]:
 
         return render_template(
-            "profile.html", username=username, peoplesprojects=peoplesprojects)
+            "profile.html", username=username, tasks=tasks)
 
     return redirect(url_for("login"))
 
@@ -233,6 +223,7 @@ def add_category():
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
     if request.method == "POST":
+        on_homepage = "on" if request.form.get("on_homepage") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
             "task_name": request.form.get("task_name"),
@@ -242,7 +233,8 @@ def edit_task(task_id):
             "due_date": request.form.get("due_date"),
             "image_url": request.form.get("image_url"),
             "image_description": request.form.get("image_description"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "on_homepage": on_homepage
         }
         mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
         flash("Task Successfully Updated")
@@ -250,32 +242,6 @@ def edit_task(task_id):
     task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_task.html", task=task, categories=categories)
-
-
-# edit a project (if admin or if project is your own)
-@app.route("/edit_task_pps/<peoplesproject_id>", methods=["GET", "POST"])
-def edit_task_pps(peoplesproject_id):
-    if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name"),
-            "task_name": request.form.get("task_name"),
-            "task_description": request.form.get("task_description"),
-            "estimated_cost": request.form.get("estimated_cost"),
-            "estimated_time": request.form.get("estimated_time"),
-            "due_date": request.form.get("due_date"),
-            "image_url": request.form.get("image_url"),
-            "image_description": request.form.get("image_description"),
-            "created_by": session["user"]
-        }
-        mongo.db.peoplesprojects.update(
-            {"_id": ObjectId(peoplesproject_id)}, submit)
-        flash("Task Successfully Updated")
-
-    peoplesproject = mongo.db.peoplesprojects.find_one(
-        {"_id": ObjectId(peoplesproject_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template(
-        "edit_task_pps.html", peoplesproject=peoplesproject, categories=categories)
 
 
 #edit categories (if admin)
@@ -299,14 +265,6 @@ def delete_task(task_id):
     mongo.db.tasks.remove({"_id": ObjectId(task_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("get_tasks"))
-
-
-#delete project (if admin or project is your own)
-@app.route("/delete_project/<peoplesproject_id>")
-def delete_project(peoplesproject_id):
-    mongo.db.peoplesprojects.remove({"_id": ObjectId(peoplesproject_id)})
-    flash("Task Successfully Deleted")
-    return redirect(url_for("get_peoplesprojects"))
 
 
 #delete category (if admin)
