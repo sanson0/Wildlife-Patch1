@@ -202,6 +202,12 @@ def addownproject():
     return render_template("addownproject.html", categories=categories)
 
 
+@app.route("/contact_users")
+def contact_users():
+    users = list(mongo.db.users.find())
+    return render_template("contact_users.html", users=users)
+
+
 #load categories page (if admin)
 @app.route("/get_categories")
 def get_categories():
