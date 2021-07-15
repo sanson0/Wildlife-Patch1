@@ -27,14 +27,15 @@
                         <i class="fas fa-caret-down"></i>
                     </div>
                     <div class="col s10">
-                        <img src="{{ task.image_url }}" alt="{{ task.image_description }}" height="40" width="auto">
-                        <strong>{{ task.category_name }}</strong>
+                        <img src="{{ task.image_url }}" alt="{{ task.image_description }}" height="40" width="40">
+                        <strong><em>{{ task.category_name }}</em> - {{ task.task_name }}</strong>
                     </div>
                 </div>
                 <div class="collapsible-body">
-                    <strong>Project Name: {{ task.task_name }}</strong><br>
-                    <strong>Description: {{ task.task_description }}</strong><br>
-                    <strong>Created By: {{ task.created_by }}</strong>
+                    <em>Description:</em><span> {{ task.task_description }}</span><br>
+                    <em>Estimated Cost:</em><span> {{ task.estimated_cost }}</span><br>
+                    <em>Estimated Time:</em><span> {{ task.estimated_time }}</span><br>
+                    <em>Created By:</em><span> {{ task.created_by }}</span>
                 </div>
             </li>
             {% if session.user|lower == "Admin"|lower or task.created_by == session.user %}

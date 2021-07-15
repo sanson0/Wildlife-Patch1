@@ -19,14 +19,15 @@
                     <i class="fas fa-caret-down"></i>
                 </div>
                 <div class="col s12">
-                    <img src="{{ task.image_url }}" alt="{{ task.image_description }}" height="40" width="auto">
-                    <strong>{{ task.category_name }}</strong>
+                    <img src="{{ task.image_url }}" alt="{{ task.image_description }}" height="40" width="40">
+                    <strong><em>{{ task.category_name }}</em> - {{ task.task_name }}</strong>
                 </div>
             </div>
             <div class="collapsible-body">
-                <strong>Project Name: {{ task.task_name }}</strong><br>
-                <strong>Description: {{ task.task_description }}</strong><br>
-                <strong>Created By: {{ task.created_by }}</strong>
+                <em>Description:</em><span> {{ task.task_description }}</span><br>
+                <em>Estimated Cost:</em><span> {{ task.estimated_cost }}</span><br>
+                <em>Estimated Time:</em><span> {{ task.estimated_time }}</span><br>
+                <em>Created By:</em><span> {{ task.created_by }}</span>
             </div>
         </li>
         <button class="btn-small green add-own"><a class="white-text" href="{{ url_for('addownproject') }}">Add Own
@@ -37,7 +38,6 @@
         <button class='dropdown-trigger red btn-small' data-target='dropdown1'>Delete Project</button>
 
         <!-- Dropdown Structure -->
-
         <ul id='dropdown1' class='dropdown-content'>
             <li>Are you sure you want to delete this project?</li>
             <li><a href="{{ url_for('delete_task', task_id=task._id) }}">Delete</a></li>
@@ -45,7 +45,6 @@
         </ul>
     </ul>
 </div>
-
 {% endif %}
 {% endfor %}
 {% endblock %}
