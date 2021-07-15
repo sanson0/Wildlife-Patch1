@@ -16,6 +16,9 @@
   height: 40px;
   width: 100px;
 }
+button {
+  width: 170px;
+}
 /*  Home page */
 #home-title {
   text-align: center;

@@ -7,18 +7,16 @@
     <div class="row">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8 offset-s1 offset-m1">
+                <div class="input-field col s12 m8 offset-m1">
                     <i class="fas fa-search prefix light-green-text text-darken-4"></i>
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
                     <label for="query">Search Tasks</label>
                 </div>
-                <div class="col s12 m4">
-                    <a href="{{ url_for('get_tasks') }}" class="deep-orange btn text-shadow">Reset</a>
-                    <button type="submit" class="light-green darken-1 btn text-shadow">
-                        <i class="fas fa-search left"></i> Search
-                    </button>
-                </div>
             </div>
+            <a href="{{ url_for('get_tasks') }}" class="red btn-small text-shadow">Reset</a>
+            <button type="submit" class="light-green darken-1 btn-small text-shadow">
+                <i class="fas fa-search left"></i> Search
+            </button>
         </form>
     </div>
 
@@ -26,7 +24,7 @@
     <!--categories-->
     <div class="row">
         {% if tasks|length > 0 %}
-        <ul class="collapsible light-green col s9 offset-s1 m9 offset-m1">
+        <ul class="collapsible light-green col s12 m10 offset-m1">
             {% for task in tasks %}
             {% if task.on_homepage == "on" %}
             <li>
@@ -34,41 +32,26 @@
                     <div>
                         <i class="fas fa-caret-down"></i>
                     </div>
-                    <div class="col s9">
-                        <img src="{{ task.url }}" alt="{{ task.alt }}" height="40" width="auto">
+                    <div>
+                        <img src="{{ task.image_url }}" alt="{{ task.image_description }}" height="40" width="auto">
                         <strong>{{ task.category_name }}</strong>
                     </div>
                 </div>
                 <div class="collapsible-body">
-                    <div class="row">
-                        <ul class="collapsible col s9 m9 offset-s1 m9 offset-m1">
-                            <li>
-                                <div class="collapsible-header white-text green darken-1 text-shadow row">
-                                    <div>
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                    <div class="col s9">
-                                        <strong>{{ task.task_name }}</strong>
-                                    </div>
-                                </div>
-                                <div class="collapsible-body">
-                                    <strong>Project Name: {{ task.task_name }}</strong><br>
-                                    <strong>Description: {{ task.task_description }}</strong><br>
-                                    <strong>Created By: {{ task.created_by }}</strong>
-                                </div>
-                            </li>
-                        </ul>
-
-                    </div>
+                    <strong>Project Name: {{ task.task_name }}</strong><br>
+                    <strong>Description: {{ task.task_description }}</strong><br>
+                    <strong>Created By: {{ task.created_by }}</strong>
                 </div>
             </li>
             {% if session.user|lower == "Admin"|lower %}
             <button class="btn-small green add-own"><a class="white-text" href="{{ url_for('addownproject') }}">Add Own
                     Project</a></button>
-            <button class="btn-small green"><a class="white-text" href="{{ url_for('edit_task', task_id=task._id) }}">Edit
+            <button class="btn-small green"><a class="white-text"
+                    href="{{ url_for('edit_task', task_id=task._id) }}">Edit
                     project</a></button>
             <!-- Dropdown Trigger -->
-            <button class='dropdown-trigger deep-orange btn-small white-text' data-target='dropdown1'>Delete Project</button>
+            <button class='dropdown-trigger red btn-small white-text' data-target='dropdown1'>Delete
+                Project</button>
 
             <!-- Dropdown Structure -->
 

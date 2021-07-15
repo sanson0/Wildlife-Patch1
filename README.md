@@ -7,7 +7,6 @@
 * Aid conservation
 * Provide a source of income by promoting sales of ready-made wildlife friendly products.
 
-
 # Features
 Features across pages and features for individual pages are listed.
 A link to the [wireframe](docs/Wildlife_Patch_wireframe.pdf) is provided.
@@ -88,6 +87,40 @@ A link to the [wireframe](docs/Wildlife_Patch_wireframe.pdf) is provided.
 * [MongoDB](https://www.mongodb.com)
 * [Flask](https://flask.palletsprojects.com)
 * [Materialize](https://materializecss.com)
+
+# Testing
+Across all pages, the nav bar shows a menu of Home, Wildlife Surveys, People's Projects, Create Account, Login.
+
+If user creates an account or logs in, the nav bar menu adjusts to show Home, Wildlife Surveys, People's Projects, Profile, Add own project, Logout.
+
+If user is an administrator, the menu shows Home, Wildlife Surveys, People's Projects, Profile, Add own project, Manage Categories, Contact Users and Logout.
+## Home page
+The home page contains a list of collapsible elements.
+Collapsibles are accordion elements that expand when clicked on, allows information to be hidden if not required by the user.
+Add, edit and delete buttons if user is an admin
+## Wildlife Surveys
+Add, edit and delete buttons if user is an admin
+## People's Projects
+This page should display projects submitted by app users using collapsible 
+## Create Account
+Form should accept entries for username, password and email address
+## Login
+Form should accept entries for username, password and email address
+## Profile page
+Profile page should show username and all projects submitted by that user only
+## Manage Categories
+This page is displayed if the user is an admin, it displays all the project categories.
+## Contact Users
+This page is displayed if the user is an admin, it displays all usernames with contact emails. This is useful, for exaple, if the admin moves a project up to the home page list because it is a good project. 
+## Logout
+If clicked, a message will show that says 'You have logged out'. The nav bar menu should adjust to show Home, Wildlife Surveys, People's Projects, Create Account, Login as before.
+## Responsiveness
+Check that different screen-widths display correctly for all devices.
+## Web browsers
+Check that the app displays correctly for different browsers, Chrome, Microsoft Bing, Firefox, Avast
+
+# Bugs
+One bug was created by incorrect addresses for css and JavaScript [see link](docs/Bugs.pdf)
 
 # Credits
 

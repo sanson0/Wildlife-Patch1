@@ -2,55 +2,39 @@
 {% block content %}
 <div class="row">
     <div class="col s12 m8 offset-m2">
-        <div class="card-panel brown lighten-4">
-            <h1 class="center-align text-darken-4">
+        <div class="card-panel white">
+            <h2 class="center-align text-darken-4">
                 {{ username }}'s Profile
-            </h1>
+            </h2>
         </div>
     </div>
 </div>
 {% for task in tasks %}
 {% if task.created_by == session.user %}
 <div class="row">
-    <ul class="collapsible brown lighten-4 col s9 m9 offset-s1 m9 offset-m1">
+    <ul class="collapsible white col s12 m10 offset-m1">
         <li>
             <div class="collapsible-header white-text brown darken-1 text-shadow row">
                 <div>
                     <i class="fas fa-caret-down"></i>
                 </div>
-                <div class="col s9">
-                    <img src="{{ task.url }}" alt="{{ task.alt }}" height="40" width="auto">
+                <div class="col s12">
+                    <img src="{{ task.image_url }}" alt="{{ task.image_description }}" height="40" width="auto">
                     <strong>{{ task.category_name }}</strong>
                 </div>
             </div>
             <div class="collapsible-body">
-                <div class="row">
-                    <ul class="collapsible col s9 m9 offset-s1 m9 offset-m1">
-                        <li>
-                            <div class="collapsible-header white-text brown darken-1 text-shadow row">
-                                <div>
-                                    <i class="fas fa-caret-down"></i>
-                                </div>
-                                <div class="col s9">
-                                    <strong>{{ task.task_name }}</strong>
-                                </div>
-                            </div>
-                            <div class="collapsible-body">
-                                <strong>Project Name: {{ task.task_name }}</strong><br>
-                                <strong>Description: {{ task.task_description }}</strong><br>
-                                <strong>Created By: {{ task.created_by }}</strong>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <strong>Project Name: {{ task.task_name }}</strong><br>
+                <strong>Description: {{ task.task_description }}</strong><br>
+                <strong>Created By: {{ task.created_by }}</strong>
             </div>
         </li>
-        <button class="btn-small green add-own"><a href="{{ url_for('addownproject') }}">Add Own
+        <button class="btn-small green add-own"><a class="white-text" href="{{ url_for('addownproject') }}">Add Own
                 Project</a></button>
-        <button class="btn-small green"><a href="{{ url_for('edit_task', task_id=task._id) }}">Edit
+        <button class="btn-small green"><a class="white-text" href="{{ url_for('edit_task', task_id=task._id) }}">Edit
                 project</a></button>
         <!-- Dropdown Trigger -->
-        <button class='dropdown-trigger deep-orange btn-small' data-target='dropdown1'>Delete Project</button>
+        <button class='dropdown-trigger red btn-small' data-target='dropdown1'>Delete Project</button>
 
         <!-- Dropdown Structure -->
 

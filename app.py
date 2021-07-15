@@ -176,6 +176,7 @@ def logout():
 @app.route("/addownproject", methods=["GET", "POST"])
 def addownproject():
     if request.method == "POST":
+        on_homepage = "on" if request.form.get("on_homepage") else "off"
         task = {
             "category_name": request.form.get("category_name"),
             "task_name": request.form.get("task_name"),
@@ -183,7 +184,10 @@ def addownproject():
             "estimated_cost": request.form.get("estimated_cost"),
             "estimated_time": request.form.get("estimated_time"),
             "due_date": request.form.get("due_date"),
-            "created_by": session["user"]
+            "image_url": request.form.get("image_url"),
+            "image_description": request.form.get("image_description"),
+            "created_by": session["user"],
+            "on_homepage": on_homepage
         }
         mongo.db.tasks.insert_one(task)
         flash("Task Successfully Added")

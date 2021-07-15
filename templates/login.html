@@ -8,7 +8,7 @@
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
         <!--Name-->
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s12">
           <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
           <label for="username">Username</label>
         </div>
@@ -22,16 +22,16 @@
       </div>
       <!--Log In-->
       <div class="row">
-          <button type="submit" class="col s3 btn-large white black-text text-shadow">
+          <button type="submit" class="col s12 btn-large white black-text text-shadow">
               <span id="login-submit-border" class="light-green"> Log In <i class="fas fa-sign-in-alt"></i></span>
           </button>
       </div>
     </form>
   </div>
   <div class="row">
-      <div class="col s6 offset-s3" id="login-message">
+      <div class="col s8 offset-s2" id="login-message">
           <p class="center-align">
-              New here?
+              New here?<br>
               <a href="{{ url_for('createaccount') }}" class="light-green black-text">Create Account</a>
           </p>
       </div>

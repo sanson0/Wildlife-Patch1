@@ -5,10 +5,10 @@
 
   <!--Form from text inputs from Marginalize 1.0.0-->
   <div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('createaccount') }}">
+    <form class="col s12" method="POST" action="{{ url_for('createaccount') }}">
         <!--Name-->
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s12 m8 offset-m2">
           <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
           <label for="username">Username</label>
         </div>
@@ -29,16 +29,16 @@
       </div>
       <!--Create Account-->
       <div class="row">
-          <button type="submit" class="col s3 btn-large white text-shadow black-text" id="create-button">
+          <button type="submit" class="col s12 btn-large white text-shadow black-text" id="create-button">
               <span id="create-submit-border" class="light-green"> Create Account <i class="fas fa-sign-in-alt"></i></span>
           </button>
       </div>
     </form>
   </div>
   <div class="row">
-      <div class="col s6 offset-s3" id="create-account-message">
+      <div class="col s8 offset-s2" id="create-account-message">
           <p class="center-align">
-              Already have an account?
+              Already have an account?<br>
               <a href="{{ url_for('login') }}" class="light-green black-text">Log In</a>
           </p>
       </div>
