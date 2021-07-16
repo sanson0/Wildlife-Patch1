@@ -50,6 +50,7 @@
             <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
             {% if session.user|lower == "Admin"|lower %}
             <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+            <li><a href="{{ url_for('contact_users') }}">Contact Users</a></li>
             {% endif %}
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
