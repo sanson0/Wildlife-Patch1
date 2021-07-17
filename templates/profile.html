@@ -14,7 +14,7 @@
 <div class="row">
     <ul class="collapsible white col s12 m10 offset-m1">
         <li>
-            <div class="collapsible-header white-text brown darken-1 text-shadow row">
+            <div class="collapsible-header white-text brown darken-4 text-shadow row">
                 <div>
                     <i class="fas fa-caret-down"></i>
                 </div>
@@ -30,9 +30,9 @@
                 <em>Created By:</em><span> {{ task.created_by }}</span>
             </div>
         </li>
-        <button class="btn-small green add-own"><a class="white-text" href="{{ url_for('addownproject') }}">Add Own
+        <button class="btn-small green darken-4 add-own"><a class="white-text" href="{{ url_for('addownproject') }}">Add Own
                 Project</a></button>
-        <button class="btn-small green"><a class="white-text" href="{{ url_for('edit_task', task_id=task._id) }}">Edit
+        <button class="btn-small green darken-4"><a class="white-text" href="{{ url_for('edit_task', task_id=task._id) }}">Edit
                 project</a></button>
         <!-- Dropdown Trigger -->
         <button class='dropdown-trigger red btn-small' data-target='dropdown1'>Delete Project</button>

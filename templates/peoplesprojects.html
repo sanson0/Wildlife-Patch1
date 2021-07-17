@@ -12,7 +12,7 @@
                 </div>
             </div>
             <a href="{{ url_for('get_peoplesprojects') }}" class="red btn-small text-shadow">Reset</a>
-            <button type="submit" class="light-green darken-1 btn-small text-shadow">
+            <button type="submit" class="green darken-4 btn-small text-shadow">
                 <i class="fas fa-search left"></i> Search
             </button>
         </form>
@@ -22,7 +22,7 @@
             {% for task in tasks %}
             {% if task.on_homepage == "off" %}
             <li>
-                <div class="collapsible-header white-text brown darken-1 text-shadow row">
+                <div class="collapsible-header white-text brown darken-4 text-shadow row">
                     <div>
                         <i class="fas fa-caret-down"></i>
                     </div>
@@ -39,9 +39,9 @@
                 </div>
             </li>
             {% if session.user|lower == "Admin"|lower or task.created_by == session.user %}
-            <button class="btn-small green add-own"><a class="white-text" href="{{ url_for('addownproject') }}">Add Own
+            <button class="btn-small green darken-4 add-own"><a class="white-text" href="{{ url_for('addownproject') }}">Add Own
                     Project</a></button>
-            <button class="btn-small green"><a class="white-text"
+            <button class="btn-small green darken-4"><a class="white-text"
                     href="{{ url_for('edit_task', task_id=task._id) }}">Edit
                     project</a></button>
             <!-- Dropdown Trigger -->
