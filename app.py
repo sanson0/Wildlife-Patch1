@@ -269,6 +269,14 @@ def delete_task(task_id):
     return redirect(url_for("get_tasks"))
 
 
+#delete project (if admin/user)
+@app.route("/delete_task_pps/<task_id>")
+def delete_task_pps(task_id):
+    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("get_peoplesprojects"))
+
+
 #delete category (if admin)
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
