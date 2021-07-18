@@ -8,14 +8,7 @@ $(document).ready(function () {
     $(".collapsible").collapsible();
     $("select").formSelect();
     $('.dropdown-trigger').dropdown();
-    $(".datepicker").datepicker({
-        format: "dd mmmm, yyyy",
-        yearRange: 3,
-        showClearBtn: true,
-        i18n: {
-            done: "Select"
-        }
-    });
+    
 
     validateMaterializeSelect();
     function validateMaterializeSelect() {
