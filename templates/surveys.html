@@ -3,7 +3,7 @@
 <h3 id="survey-title">Wildlife Surveys</h3>
 <section id="surveys-sunflower">
   {% if session.user|lower == "Admin"|lower %}
-  <button class="btn orange"><a class="white-text" href="{{ url_for('add_link') }}">Add Link</a></button>
+  <button class="btn green darken-4"><a class="white-text" href="{{ url_for('add_link') }}">Add Link</a></button>
   {% endif %}
   {% for survey in survey_links %}
   <div class="row">
@@ -12,9 +12,9 @@
     </div>
   </div>
   {% if session.user|lower == "Admin"|lower %}
-  <button class="btn green"><a class="white-text" href="{{ url_for('edit_link', survey_id=survey._id) }}">Edit
+  <button class="btn green darken-4"><a class="white-text" href="{{ url_for('edit_link', survey_id=survey._id) }}">Edit
       Link</a></button>
-  <button class="btn deep-orange"><a class="white-text"
+  <button class="btn red"><a class="white-text"
       href="{{ url_for('delete_link', survey_id=survey._id) }}">Delete</a></button>
   {% endif %}
   {% endfor %}

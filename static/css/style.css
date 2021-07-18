@@ -144,7 +144,13 @@ input {
 #login-submit-border {
   padding: 3px 3px 3px 3px;
 }
-
+/* profile */
+#profile-box {
+  border: solid black 2px;
+}
+#profile-username {
+  font-weight: 700;
+}
 /* categories */
 #categories-title {
   font-weight: 700;
@@ -156,4 +162,11 @@ input {
 #add-category-button {
   margin-left: 25px;
   margin-top: 25px;
+}
+/* contact users */
+#contact-users {
+  font-weight: 700;
+}
+#contactuser-border {
+  border: solid black 2px;
 }
