@@ -2,21 +2,21 @@
 {% block content %}
 <h3 id="people-title">People's Projects</h3>
 <section id="bug-shelter">
-    <div class="row card-panel>
+    <div class="row card-panel brown darken-4">
         <form action=" {{ url_for('search') }}" method="post" class="col s12">
-        <div class="row valign-wrapper center-align light-green">
-            <div class="input-field col s12 m8">
-                <i class="fas fa-search prefix light-green-text text-darken-4"></i>
-                <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                <label for="query">Search Tasks</label>
+            <div class="row valign-wrapper center-align brown lighten-4">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix light-green-text text-darken-4"></i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label class="black-text" for="query">Search Tasks</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_peoplesprojects') }}" class="red btn-small text-shadow">Reset</a>
+                    <button type="submit" class="green darken-4 btn-small text-shadow">
+                        Search
+                    </button>
+                </div>
             </div>
-            <div class="col s12 m4">
-                <a href="{{ url_for('get_peoplesprojects') }}" class="red btn-small text-shadow">Reset</a>
-                <button type="submit" class="green darken-4 btn-small text-shadow">
-                    Search
-                </button>
-            </div>
-        </div>
         </form>
     </div>
     <div class="row">

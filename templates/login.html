@@ -8,17 +8,17 @@
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
       <!--Name-->
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field txt-background col s12">
           <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
-            class="validate" required>
+            class=" white-text validate" required>
           <label for="username">Username</label>
         </div>
       </div>
       <!--Password-->
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field txt-background col s12">
           <input id="password" name="password" type="password" minlength="5" maxlength="15"
-            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+            pattern="^[a-zA-Z0-9]{5,15}$" class=" white-text validate" required>
           <label for="password">Password</label>
         </div>
       </div>

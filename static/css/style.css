@@ -46,9 +46,6 @@ button {
   border: solid black 2px;
 }
 
-.input-field {
-  background-color: rgba(0, 0, 0, 0.8);
-}
 #no-results-found {
   background-color: yellowgreen;
   border: solid black 2px;
@@ -113,10 +110,6 @@ button {
   background-size: cover;
   width: 100%;
   border: solid black 2px;
-}
-
-input {
-  color: aliceblue;
 }
 
 #create-account-message {
