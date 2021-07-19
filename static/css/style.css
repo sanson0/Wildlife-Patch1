@@ -148,13 +148,15 @@ input {
 }
 
 #login-message {
-  background-color: aliceblue;
   font-size: large;
   font-weight: 600;
 }
 
 #login-submit-border {
   padding: 3px 3px 3px 3px;
+}
+.txt-background {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 /* profile */
 #profile-box {

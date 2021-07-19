@@ -6,42 +6,49 @@
   <!--Form from text inputs from Marginalize 1.0.0-->
   <div class="row">
     <form class="col s12" method="POST" action="{{ url_for('createaccount') }}">
-        <!--Name-->
+      <!--Name-->
       <div class="row">
         <div class="input-field col s12 m8 offset-m2">
-          <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+          <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+            class="validate" required>
           <label for="username">Username</label>
         </div>
       </div>
       <!--Password-->
       <div class="row">
-        <div class="input-field col s12">
-          <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+        <div class="input-field col s12 m8 offset-m2">
+          <input id="password" name="password" type="password" minlength="5" maxlength="15"
+            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
           <label for="password">Password</label>
         </div>
       </div>
       <!--Email-->
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s12 m8 offset-m2">
           <input id="email" type="email" name="email" class="validate">
           <label for="email">Email</label>
         </div>
       </div>
       <!--Create Account-->
       <div class="row">
-          <button type="submit" class="col s12 btn-large white text-shadow black-text" id="create-button">
-              <span id="create-submit-border" class="light-green"> Create Account <i class="fas fa-sign-in-alt"></i></span>
-          </button>
+        <button type="submit" class="col s12 m8 offset-m2 txt-background">
+          <p class="center-align white-text">
+            Create Account <i class="fas fa-sign-in-alt"></i><br>
+          </p>
+        </button>
       </div>
     </form>
   </div>
+
+
+  <!--Login if existing user-->
   <div class="row">
-      <div class="col s8 offset-s2" id="create-account-message">
-          <p class="center-align">
-              Already have an account?<br>
-              <a href="{{ url_for('login') }}" class="light-green black-text">Log In</a>
-          </p>
-      </div>
+    <div class="col s8 offset-s2 txt-background">
+      <p class="center-align white-text">
+        New here?<br>
+        <a href="{{ url_for('login') }}" class="light-green black-text">Log In</a>
+      </p>
+    </div>
   </div>
 </section>
 {% endblock %}
