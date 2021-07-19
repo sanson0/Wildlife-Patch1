@@ -7,6 +7,13 @@
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
 }
+#garden-products {
+  font-weight: 700;
+  font-size: x-large;
+  text-decoration: underline;
+  margin: auto;
+  margin-top: 20px;
+}
 #space {
   height: 40px;
   width: 100px;
@@ -14,6 +21,7 @@
 button {
   width: 170px;
 }
+/* footer */
 #footer-icons {
   font-size: 25px;
   margin-top: 20px;
@@ -24,7 +32,12 @@ button {
   color: black;
   font-weight: 700;
 }
-
+.card-panel {
+  background-color: green;
+}
+.btn-small {
+  width: 75px;
+}
 #wild-garden {
   background-image: url('https://cdn.pixabay.com/photo/2019/04/21/01/12/chrysanthemum-4143241__340.jpg');
   background-repeat: repeat-y;
@@ -41,19 +54,19 @@ button {
   border: solid black 2px;
 }
 /* Wildlife surveys page */
-
 .survey-link {
-  border-radius: 5px;
-  background-color: brown;
-  margin-top: 30px;
-  padding-left: 20px;
+  color: black;
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 #survey-title {
   font-weight: 700;
   text-align: center;
 }
-
+#links-message {
+  margin-bottom: 40px;
+}
 @media screen and (min-width: 601px) {
   #surveys-sunflower {
     background-image: url('https://cdn.pixabay.com/photo/2016/09/04/12/05/sun-flower-1643795_960_720.jpg');

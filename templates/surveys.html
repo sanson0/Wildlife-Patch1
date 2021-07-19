@@ -2,23 +2,27 @@
 {% block content %}
 <h3 id="survey-title">Wildlife Surveys</h3>
 <section id="surveys-sunflower">
+  <h4 class="yellow lighten-3 center-align">Help conservation and contribute to science by providing data for wildlife and plant surveys.</h4>
+  <h5 id="links-message" class="yellow lighten-3 center-align"> Click on the links below to access recommended wildlife surveys</h5>
+  <div class="row">
+    <div class="col s10 offset-s1 m5 offset-m1">
   {% if session.user|lower == "Admin"|lower %}
   <button class="btn green darken-4"><a class="white-text" href="{{ url_for('add_link') }}">Add Link</a></button>
   {% endif %}
+</div>
+</div>
   {% for survey in survey_links %}
   <div class="row">
-    <div class="survey-link col s10 offset-s1 m5 offset-m1">
-      <a class="white-text" href="{{survey.survey_link}}">{{ survey.survey_title }}</a><br>
+    <div class="col s10 offset-s1 m5 offset-m1">
+      <a class="survey-link" href="{{survey.survey_link}}">{{ survey.survey_title }}</a><br>
+      {% if session.user|lower == "Admin"|lower %}
+      <button class="btn green darken-4"><a class="white-text" href="{{ url_for('edit_link', survey_id=survey._id) }}">Edit
+          Link</a></button>
+      <button class="btn red"><a class="white-text"
+          href="{{ url_for('delete_link', survey_id=survey._id) }}">Delete</a></button>
+      {% endif %}
     </div>
   </div>
-  {% if session.user|lower == "Admin"|lower %}
-  <button class="btn green darken-4"><a class="white-text" href="{{ url_for('edit_link', survey_id=survey._id) }}">Edit
-      Link</a></button>
-  <button class="btn red"><a class="white-text"
-      href="{{ url_for('delete_link', survey_id=survey._id) }}">Delete</a></button>
-  {% endif %}
   {% endfor %}
-  <h5 class="yellow lighten-2 center-align">Help conservation and contribute to science by providing data for wildlife and plant surveys.
-  </h5>
 </section>
 {% endblock %}
