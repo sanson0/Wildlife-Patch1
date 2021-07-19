@@ -7,6 +7,9 @@
         </h3>
     </div>
 </div>
+<div class="center-align">
+    <h4>This page lists all the projects that the user has contributed</h4>
+</div>
 <section id="profile-box" class="grey darken-4">
     {% for task in tasks %}
     {% if task.created_by == session.user %}
@@ -14,12 +17,12 @@
         <ul class="collapsible white col s12 m10 offset-m1">
             <li>
                 <div class="collapsible-header white-text brown darken-4 text-shadow row">
-                    <div>
-                        <i class="fas fa-caret-down"></i>
-                    </div>
                     <div class="col s12">
                         <img src="{{ task.image_url }}" alt="{{ task.image_description }}" height="40" width="40">
                         <strong><em>{{ task.category_name }}</em> - {{ task.task_name }}</strong>
+                    </div>
+                    <div class="col s2 m2 right-align">
+                        <i class="fas fa-caret-down"></i>
                     </div>
                 </div>
                 <div class="collapsible-body">
@@ -29,15 +32,29 @@
                     <em>Created By:</em><span> {{ task.created_by }}</span>
                 </div>
             </li>
-            <button class="btn-small green darken-4 add-own"><a class="white-text"
-                    href="{{ url_for('addownproject') }}">Add Own
-                    Project</a></button>
-            <button class="btn-small green darken-4"><a class="white-text"
-                    href="{{ url_for('edit_task', task_id=task._id) }}">Edit
-                    project</a></button>
-            <button class="btn-small red"><a class="white-text"
-                    href="{{ url_for('delete_task_pps', task_id=task._id) }}">Delete
-                    project</a></button>
+            <div class="row">
+                <row class="col s4 m4 center-align">
+                    <button class="btn-small green darken-4 add-own">
+                        <a class="white-text"
+                            href="{{ url_for('addownproject') }}">Add
+                        </a>
+                    </button>
+                </row>
+                <row class="col s4 m4 center-align">
+                    <button class="btn-small green darken-4">
+                        <a class="white-text"
+                            href="{{ url_for('edit_task', task_id=task._id) }}">Edit
+                        </a>
+                    </button>
+                </row>
+                <row class="col s4 m4 center-align">
+                    <button class="btn-small red">
+                        <a class="white-text"
+                            href="{{ url_for('delete_task_pps', task_id=task._id) }}">Delete
+                        </a>
+                    </button>
+                </row>
+            </div>
         </ul>
     </div>
     {% endif %}
