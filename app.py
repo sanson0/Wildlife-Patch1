@@ -91,6 +91,14 @@ def get_peoplesprojects():
         "peoplesprojects.html", tasks=tasks)
 
 
+# search function for home page projects
+@app.route("/search_pps", methods=["GET", "POST"])
+def search_pps():
+    query = request.form.get("query")
+    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
+    return render_template("peoplesprojects.html", tasks=tasks)
+
+
 # Create an account
 @app.route("/createaccount", methods=["GET", "POST"])
 def createaccount():
