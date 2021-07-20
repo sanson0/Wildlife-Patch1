@@ -10,7 +10,7 @@
 <div class="center-align">
     <h4>This page lists all the projects that the user has contributed</h4>
 </div>
-<section class="border-box" class="grey darken-4">
+<section class="border-box grey darken-4">
     {% for task in tasks %}
     {% if task.created_by == session.user %}
     <div class="row">

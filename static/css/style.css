@@ -88,7 +88,9 @@ button {
     margin-bottom: 20px;
   }
 }
-
+.survey-margin {
+  margin-top: 10px;
+}
 /*  People's projects */
 #bug-shelter {
   background-image: url(https://cdn.pixabay.com/photo/2018/04/22/11/05/background-3340740_960_720.jpg);
