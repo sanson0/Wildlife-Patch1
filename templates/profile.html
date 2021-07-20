@@ -32,29 +32,20 @@
                     <em>Created By:</em><span> {{ task.created_by }}</span>
                 </div>
             </li>
-            <div class="row">
-                <row class="col s4 m4 center-align">
-                    <button class="btn-small green darken-4 add-own">
-                        <a class="white-text"
-                            href="{{ url_for('addownproject') }}">Add
-                        </a>
-                    </button>
-                </row>
-                <row class="col s4 m4 center-align">
-                    <button class="btn-small green darken-4">
-                        <a class="white-text"
-                            href="{{ url_for('edit_task', task_id=task._id) }}">Edit
-                        </a>
-                    </button>
-                </row>
-                <row class="col s4 m4 center-align">
-                    <button class="btn-small red">
-                        <a class="white-text"
-                            href="{{ url_for('delete_task_pps', task_id=task._id) }}">Delete
-                        </a>
-                    </button>
-                </row>
-            </div>
+            <li>
+                <button class="btn-small green darken-4 col s4 m4 center-align">
+                    <a class="white-text" href="{{ url_for('addownproject') }}">Add
+                    </a>
+                </button>
+                <button class="btn-small green darken-4 col s4 m4 center-align">
+                    <a class="white-text" href="{{ url_for('edit_task', task_id=task._id) }}">Edit
+                    </a>
+                </button>
+                <button class="btn-small red col s4 m4 center-align">
+                    <a class="white-text" href="{{ url_for('delete_task_pps', task_id=task._id) }}">Delete
+                    </a>
+                </button>
+            </li>
         </ul>
     </div>
     {% endif %}

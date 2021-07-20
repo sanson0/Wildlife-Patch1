@@ -19,13 +19,16 @@
             </div>
         </form>
     </div>
+    
+    
     <div class="row">
-        <ul class="collapsible brown lighten-4 col s12 m10 offset-m1">
+        {% if tasks|length > 0 %}
+        <ul class="collapsible white col s12 m10 offset-m1">
             {% for task in tasks %}
             {% if task.on_homepage == "off" %}
             <li>
                 <div class="collapsible-header white-text brown darken-4 text-shadow row">
-                    <div class="col s10">
+                    <div class="col s12">
                         <img src="{{ task.image_url }}" alt="{{ task.image_description }}" height="40" width="40">
                         <strong><em>{{ task.category_name }}</em> - {{ task.task_name }}</strong>
                     </div>
@@ -40,28 +43,30 @@
                     <em>Created By:</em><span> {{ task.created_by }}</span>
                 </div>
             </li>
-            <div class="row">
+            <li>
                 {% if session.user|lower == "Admin"|lower or task.created_by == session.user %}
-                <div class="col s4 m4 center-align">
-                    <button class="btn-small green darken-4 add-own"><a class="white-text"
-                            href="{{ url_for('addownproject') }}">Add
-                        </a></button>
-                    </div>
-                <div class="col s4 m4 center-align">
-                    <button class="btn-small green darken-4"><a class="white-text"
-                            href="{{ url_for('edit_task', task_id=task._id) }}">Edit
-                        </a></button>
-                    </div>
-                <div class="col s4 m4 center-align">
-                    <button class="btn-small red"><a class="white-text"
-                            href="{{ url_for('delete_task_pps', task_id=task._id) }}">Delete
-                        </a></button>
-                    </div>
+                <button class="btn-small green darken-4 col s4 m4 center-align">
+                    <a class="white-text" href="{{ url_for('addownproject') }}">Add
+                    </a>
+                </button>
+                <button class="btn-small green darken-4 col s4 m4 center-align">
+                    <a class="white-text" href="{{ url_for('edit_task', task_id=task._id) }}">Edit
+                    </a>
+                </button>
+                <button class="btn-small red col s4 m4 center-align">
+                    <a class="white-text" href="{{ url_for('delete_task_pps', task_id=task._id) }}">Delete
+                    </a>
+                </button>
                 {% endif %}
-            </div>
+            </li>
             {% endif %}
             {% endfor %}
         </ul>
+        {% else %}
+        <div id="no-results-found" class="col s6 offset-s3">
+            <h1 class="deep-orange-text text-darken-4 center-align">No Results Found</h1>
+        </div>
+        {% endif %}
     </div>
 </section>
 {% endblock %}
