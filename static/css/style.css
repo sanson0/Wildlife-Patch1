@@ -157,7 +157,7 @@ button {
   background-color: rgba(0, 0, 0, 0.8);
 }
 /* profile */
-#profile-box {
+.border-box {
   border: solid black 2px;
 }
 #profile-username {
@@ -172,8 +172,8 @@ button {
   border: solid black 2px;
 }
 #add-category-button {
-  margin-left: 25px;
-  margin-top: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 /* contact users */
 #contact-users {
