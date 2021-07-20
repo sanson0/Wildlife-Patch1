@@ -42,21 +42,21 @@
             </li>
             <div class="row">
                 {% if session.user|lower == "Admin"|lower or task.created_by == session.user %}
-                <row class="col s4 m4 center-align">
+                <div class="col s4 m4 center-align">
                     <button class="btn-small green darken-4 add-own"><a class="white-text"
                             href="{{ url_for('addownproject') }}">Add
                         </a></button>
-                </row>
-                <row class="col s4 m4 center-align">
+                    </div>
+                <div class="col s4 m4 center-align">
                     <button class="btn-small green darken-4"><a class="white-text"
                             href="{{ url_for('edit_task', task_id=task._id) }}">Edit
                         </a></button>
-                </row>
-                <row class="col s4 m4 center-align">
+                    </div>
+                <div class="col s4 m4 center-align">
                     <button class="btn-small red"><a class="white-text"
                             href="{{ url_for('delete_task_pps', task_id=task._id) }}">Delete
                         </a></button>
-                </row>
+                    </div>
                 {% endif %}
             </div>
             {% endif %}
