@@ -21,6 +21,11 @@
 button {
   width: 170px;
 }
+.pad-text {
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
+}
 /* footer */
 #footer-icons {
   font-size: 25px;
