@@ -1,32 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 id="survey-title">Add Project</h3>
-<section id="add-category_background">
-    <div class="row grey lighten-5">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('addownproject') }}">
+<section>
+    <div class="row card-panel grey lighten-5">
+        <form class="col s12" method="POST" action="{{ url_for('addownproject') }}">
             <div class="row">
                 <!-- category selection -->
-                <div class="input-field col s10 offset-s1">
-                    <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
-                        {% for category in categories %}
-                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="category_name">Choose Category</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-folder-open prefix green-text text-darken-4"></i>
+                        <select id="category_name" name="category_name" class="validate" required>
+                            <option value="" disabled selected>Choose Category</option>
+                            {% for category in categories %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="category_name">Choose Category</label>
+                    </div>
                 </div>
                 <!-- task name -->
                 <div class="row">
-                    <div class="input-field col s10 offset-s1">
+                    <div class="input-field col s12">
                         <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
-                        <input class="text-black" id="task_name" name="task_name" minlength="5" maxlength="50" type="text" class="validate"
-                            required>
-                        <label class="text-black" for="task_name">Task Name</label>
+                        <input id="task_name" name="task_name" minlength="5" maxlength="50"
+                            type="text" class="validate" required>
+                        <label for="task_name">Task Name</label>
                     </div>
                 </div>
                 <!-- task description -->
                 <div class="row">
-                    <div class="input-field col s10 offset-s1">
+                    <div class="input-field col s12">
                         <i class="fas fa-align-left prefix light-green-text text-darken-4"></i>
                         <textarea id="task_description" class="white-text" name="task_description" minlength="5"
                             maxlength="400" class="materialize-textarea validate" required></textarea>
@@ -35,7 +38,7 @@
                 </div>
                 <!-- estimated cost -->
                 <div class="row">
-                    <div class="input-field col s10 offset-s1">
+                    <div class="input-field col s12">
                         <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
                         <input id="estimated_cost" name="estimated_cost" minlength="1" maxlength="10" type="text"
                             class="validate" required>
@@ -44,7 +47,7 @@
                 </div>
                 <!-- estimated time -->
                 <div class="row">
-                    <div class="input-field col s10 offset-s1">
+                    <div class="input-field col s12">
                         <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
                         <input id="estimated_time" name="estimated_time" minlength="1" maxlength="10" type="text"
                             class="validate" required>
@@ -53,7 +56,7 @@
                 </div>
                 <!-- image -->
                 <div class="row">
-                    <div class="input-field col s10 offset-s1">
+                    <div class="input-field col s12">
                         <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
                         <input id="image_url" name="image_url" minlength="5" maxlength="100" type="text"
                             class="validate" required>
@@ -62,7 +65,7 @@
                 </div>
                 <!--image description-->
                 <div class="row">
-                    <div class="input-field col s10 offset-s1">
+                    <div class="input-field col s12">
                         <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
                         <input id="image_description" name="image_description" minlength="3" maxlength="15" type="text"
                             class="validate" required>
@@ -73,7 +76,7 @@
                 {% if session.user|lower == "Admin"|lower %}
                 <!-- on homepage toggle -->
                 <div class="row">
-                    <div class="input-field col s10 offset-s1">
+                    <div class="input-field col s12">
                         <div class="switch">
                             <label for="on_homepage">
                                 <input type="checkbox" id="on_homepage" name="on_homepage">
