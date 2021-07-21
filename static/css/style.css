@@ -33,6 +33,14 @@
   font-size: 25px;
   margin-top: 20px;
 }
+#email-admin {
+  font-weight: 700;
+  font-size: large;
+  text-decoration: underline;
+  margin: auto;
+  margin-top: 20px;
+
+}
 /*  Home page */
 #home-title {
   text-align: center;

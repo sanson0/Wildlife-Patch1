@@ -18,11 +18,14 @@ A link to the [wireframe](docs/Wildlife_Patch_wireframe.pdf) is provided. The wi
 * Pages are read only unless user registers or logs in.
 * Logging in as an admin gives access to more pages and more options for manipulating data.
 * There are links to buying ready-made wildlife friendly products so the site can benefit financially.
+* A footer has been added to each page with social media links.
+* A message displays in footer encouraging people to create an account or log in if not signed in.
+* The footer contains a link (not connected to anything) so that products can be bought for the garden.
 ## Features on pages before the user signs in
-* Message encouraging users to sign in
 * Navbar menu contains home, surveys, people's projects, create account and login pages
+* A message displays encouraging people to create an account or log in if not signed in.
 ## Features on the pages after the user signs in
-* Navbar menu contains home, surveys, people's projects, profile and add own project contact users and logout 
+* Navbar menu contains home, surveys, people's projects, profile and add own project and logout 
 ## Features on pages if administrator signs in
 * Navbar menu contains home, surveys, people's projects, profile, add own project, manage category, contact users and logout  
 ## Features on the home page
@@ -30,6 +33,7 @@ A link to the [wireframe](docs/Wildlife_Patch_wireframe.pdf) is provided. The wi
 * List of projects selected by the administrator of the website
 * There is a search function that targets project name and parts of task description
 * There is a reset button linked to the search function to clear the search
+* Admin users have add, edit and delete buttons linked to each project
 ## Features on the wildlife surveys page
 For the Wildlife Surveys page, the top results are listed 
 
@@ -50,42 +54,40 @@ Everyone can read the links.
 * Projects created by the website's users appear on this page
 * There is a search function that targets project name and parts of task description
 * There is a reset button linked to the search function to clear the search
+* Admin users have add, edit and delete buttons linked to each project
+* Other users have add, edit and delete buttons linked to each project that they created
 ## Features on the create account page
-* Input fields for username, password, email
+* Input fields for username, password, email, all required attributes
 * Submit button
 * Message and button that redirects user to login in case user already has an account.
 ## Features on the login page
-* Input fields for username, password, email
+* Input fields for username, password, both required attributes
 * Submit button
 * Message and button that redirects user to create account in case user doesn't have an account.
 ## Features on the profile page
 * Username appears on the profile page
 * User's own projects appear on the page.
-* User is able to create, update and delete projects that appear on the profile page.
+* User is able to create, update and delete projects that appear on the profile page as the user created them.
 ## Features on the categories page
 * Categories are displayed on categories page
-* Each category has an edit button and a delete button
+* Each category has an add, edit and delete button
 * Clicking edit button opens the edit category page
-* There is an add category button which opens onto add category page
+* There is an add category button which opens onto the add category page
 * This page controls the category choice for the projects that are added to the home page or the people's projects page.
 ## Features on the add category page
 * Input field for category name
 * Submit button
-* Reset button to return the admin user to categories with no action taken.
 ## Features on the edit category page
 * Input field for category name
-* Small images can be added to each category in the form of a url address
 * Submit button
 ## Features on the add project page
 * Select category field
-* Input fields for task name, task description, finish date, estimated cost, estimated time
-* date picker is linked to 'finish date' field to keep consistency of dates in the database
+* Input fields for task name, task description, estimated cost, estimated time, url address for images, image name
 * Submit button
-* Username automatically added to database when the submit button is clicked
+* Username automatically added to database when the submit button is clicked (displayed in People's project page)
 ## Features on the edit project page
 * Select category field
-* Input fields for task name, task description, finish date, estimated cost, estimated time
-* date picker is linked to 'finish date' field to keep consistency of dates in the database
+* Input fields for task name, task description, estimated cost, estimated time, url address for images, image name
 * Submit button
 
 # Data
@@ -110,38 +112,52 @@ If user creates an account or logs in, the nav bar menu adjusts to show Home, Wi
 If user is an administrator, the menu shows Home, Wildlife Surveys, People's Projects, Profile, Add own project, Manage Categories, Contact Users and Logout.
 ### Home page
 The home page contains a list of projects within collapsible elements.
+
 Collapsibles are accordion elements that expand when clicked on, allows information to be hidden if not required by the user.
 Add, edit and delete buttons are available if the user is a site administrator (admin)
-Typing in the search bar and pressing return or clicking the submit button should reduce the list of projects to only those that match the search words in the project name or project description.
+
+Typing in the search bar and pressing return or clicking the submit button should reduce the list of projects to only those that match the search words in the project name or project description. If the search returns no results, a message should show saying 'No results found'
+
 Clicking on the reset button should return the page to the full list of projects that should appear there.
 ### Wildlife Surveys
 The wildlife surveys page contains all the most relevent external links to wildlife surveys.
+
 Add, edit and delete buttons are included if the user is an admin.
 ### People's Projects
 This page should display projects submitted by app users using collapsible elements.
+
 Add, edit and delete buttons are available if the user is a site administrator (admin) or if the project is the user's own project.
-Typing in the search bar and pressing return or clicking the submit button should reduce the list of projects to only those that match the search words in the project name or project description.
+
+Typing in the search bar and pressing return or clicking the submit button should reduce the list of projects to only those that match the search words in the project name or project description. If the search returns no results, a message should show saying 'No results found'
+
 Clicking on the reset button should return the page to the full list of projects that should appear there.
 ### Create Account
-Form should accept entries for username, password and email address and contain a submit button. Also, there is a link provided at the bottom in case the user already has an account and needs to get to the login page. The page should not allow the form to be submitted without all fields being filled in.
+Form should accept entries for username, password and email address and contain a submit button. The page should not allow the form to be submitted without all fields being filled in.
+
+Passwords should be made secure (hashed), so it is practically impossible to go from hashed password to original password.
+
+Also, there is a link provided at the bottom in case the user already has an account and needs to get to the login page. 
 ### Login
-Form should accept entries for username, password and email address and contain a submit button. Also, there is a link provided at the bottom of the page in case the user does not yet have an account and needs to get to the create account page.
+Form should accept entries for username, password and email address and contain a submit button. The page should not allow the form to be submitted without all fields being filled in.
+
+Also, there is a link provided at the bottom of the page in case the user does not yet have an account and needs to get to the create account page.
 ### Profile page
-Profile page should show username and all projects submitted by that user only. It also allows the user to create, read, update and delete any of those projects.
+Profile page should show the username of person logged in and all projects submitted by that user only. It should also allow the user to create, read, update and delete any of those projects.
 ### Add own project
-This page should request category name, task name, task description, estimated cost, estimated time to complete, image as a url address and an image description. All categories are required except the category name, because a project may not fit easily into a category due to the variety within conservation and wildlife topics. If the admin chooses to move the project up to the home page, a category can be chosen or a new one can be created to accommodate the project.
+This page should request category name, task name, task description, estimated cost, estimated time to complete, image as a url address and an image description. All categories are required.
 ### Manage Categories
-This page is displayed if the user is an admin, it displays all the project categories.
+This page should display if the user is an admin, displaying all the project categories.
+
 The admin is allowed to create, update and delete categories so that the admin can control the project categories.
 ### Contact Users
 This page is displayed if the user is an admin, it displays all usernames with contact emails. This is useful, for example, if the admin moves a project up to the home page list because it is a good project. 
 ### Logout
-If clicked, a message will flash that says 'You have logged out'. The nav bar menu should adjust to show Home, Wildlife Surveys, People's Projects, Create Account, Login as before.
+If clicked, a message should flash that says 'You have logged out'. The nav bar menu should adjust to show Home, Wildlife Surveys, People's Projects, Create Account, Login as before.
 ### Responsiveness
 Check that different screen-widths display correctly for all devices.
 See [link](docs/Responsiveness.pdf)
 ### Web browsers
-Check that the app displays correctly for different browsers, Chrome, Microsoft Bing, Firefox, Avast
+Check that the app displays correctly for different browsers, eg. Chrome, Microsoft Bing, Firefox, Avast
 
 ## Testing tools
 ### Code validators
@@ -169,6 +185,8 @@ One bug was created by incorrect addresses for css and JavaScript [see link](doc
 [Snyk](https://snyk.io), This website tests Python code for errors.
 
 Tim Nelson’s miniproject from Code Institute. This project was useful as a template because it used MongoDB for the database, it used flash messages, it displayed projects in a task manager app, it had create account, login and user profile pages.
+
+Mentor Nishant Kumar reviewed this project and made many useful suggestions
 ## Media
 The following images were taken from [Pixabay](https://pixabay.com)
 
@@ -201,7 +219,3 @@ Tim Nelson’s miniproject from Code Institute. This project was useful as a tem
 [shelter](https://cdn.pixabay.com/photo/2015/12/09/18/12/insect-house-1085197_960_720.jpg)
 
 [ponds](https://cdn.pixabay.com/photo/2016/06/07/20/20/water-lilies-1442497__340.jpg)
-
-
-
-
