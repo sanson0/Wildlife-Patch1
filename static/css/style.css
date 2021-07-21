@@ -58,6 +58,10 @@
   background-color: yellowgreen;
   border: solid black 2px;
 }
+.mission-statement {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 /* Wildlife surveys page */
 .survey-link {
   color: black;
@@ -89,9 +93,6 @@
 }
 .survey-margin {
   margin-top: 10px;
-}
-.message-survey {
-  margin: 5px 10px 5px 10px;
 }
 /*  People's projects */
 #bug-shelter {

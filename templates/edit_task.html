@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 id="survey-title">Edit Project</h3>
+<h5 class="mission-statement center-align">Modify your project using this page</h5>
 <section>
     <div class="row card-panel grey lighten-5 border-box">
         <form class="col s12" method="POST" action="{{ url_for('edit_task', task_id=task._id) }}">

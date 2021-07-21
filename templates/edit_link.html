@@ -2,36 +2,39 @@
 {% block content %}
 
 <h3 id="survey-title">Edit Link</h3>
-<section id="add-category_background">
-    <form class="col s12" method="POST" action="{{ url_for('edit_link', survey_id=survey._id) }}">
-        <div class="row">
-            <!--Link title-->
+<h5 class="mission-statement center-align">Edit wildlife survey link on this page</h5>
+<section class="white border-box">
+    <div class="row">
+        <form class="col s12" method="POST" action="{{ url_for('edit_link', survey_id=survey._id) }}">
             <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
-                    <input id="survey_title" name="survey_title" minlength="5" maxlength="100" type="text" class="validate" value="{{ survey.survey_title }}"
-                        required>
-                    <label for="survey_title">Title of link</label>
+                <!--Link title-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                        <input id="survey_title" name="survey_title" minlength="5" maxlength="100" type="text"
+                            class="validate" value="{{ survey.survey_title }}" required>
+                        <label for="survey_title">Title of link</label>
+                    </div>
+                </div>
+                <!--Link address-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                        <input id="survey_link" name="survey_link" minlength="5" maxlength="200" type="text"
+                            class="validate" value="{{ survey.survey_link }}" required>
+                        <label for="survey_link">Url address</label>
+                    </div>
+                </div>
+                <!-- submit button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large grey darken-4 text-shadow">
+                            Edit Link <i class="fas fa-plus-square right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-            <!--Link address-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
-                    <input id="survey_link" name="survey_link" minlength="5" maxlength="200" type="text" class="validate" value="{{ survey.survey_link }}"
-                        required>
-                    <label for="survey_link">Url address</label>
-                </div>
-            </div>
-            <!-- submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn-large grey darken-4 text-shadow">
-                        Edit Link <i class="fas fa-plus-square right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </section>
 {% endblock %}
