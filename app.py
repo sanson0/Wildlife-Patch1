@@ -21,7 +21,6 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-
 # load home page
 @app.route("/get_tasks")
 def get_tasks():
@@ -53,8 +52,7 @@ def add_link():
             "survey_link": request.form.get("survey_link"),
         }
         mongo.db.survey_links.insert_one(survey)
-        flash("Link Successfully Added")
-        
+        flash("Link Successfully Added")       
     return render_template("add_link.html")
 
 
@@ -64,15 +62,13 @@ def edit_link(survey_id):
     if request.method == "POST":
         submit = {
            "survey_title": request.form.get("survey_title"),
-            "survey_link": request.form.get("survey_link"),
+           "survey_link": request.form.get("survey_link"),
         }
         mongo.db.survey_links.update({"_id": ObjectId(survey_id)}, submit)
         flash("Link Successfully Updated")
 
     survey = mongo.db.survey_links.find_one({"_id": ObjectId(survey_id)})
-    
     return render_template("edit_link.html", survey=survey)
-
 
 
 # delete link in the wildlife surveys page
@@ -197,8 +193,7 @@ def addownproject():
             "on_homepage": on_homepage
         }
         mongo.db.tasks.insert_one(task)
-        flash("Task Successfully Added")
-        
+        flash("Task Successfully Added")        
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("addownproject.html", categories=categories)
 
@@ -209,14 +204,14 @@ def contact_users():
     return render_template("contact_users.html", users=users)
 
 
-#load categories page (if admin)
+# load categories page (if admin)
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
 
-#add category (if admin)
+# add category (if admin)
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -254,7 +249,7 @@ def edit_task(task_id):
     return render_template("edit_task.html", task=task, categories=categories)
 
 
-#edit categories (if admin)
+# edit categories (if admin)
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -269,7 +264,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
-#delete project (if admin)
+# delete project (if admin)
 @app.route("/delete_task/<task_id>")
 def delete_task(task_id):
     mongo.db.tasks.remove({"_id": ObjectId(task_id)})
@@ -277,7 +272,7 @@ def delete_task(task_id):
     return redirect(url_for("get_tasks"))
 
 
-#delete project (if admin/user)
+# delete project (if admin/user)
 @app.route("/delete_task_pps/<task_id>")
 def delete_task_pps(task_id):
     mongo.db.tasks.remove({"_id": ObjectId(task_id)})
@@ -285,7 +280,7 @@ def delete_task_pps(task_id):
     return redirect(url_for("get_peoplesprojects"))
 
 
-#delete category (if admin)
+# delete category (if admin)
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
