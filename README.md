@@ -110,6 +110,8 @@ Across all pages, the nav bar shows a menu of Home, Wildlife Surveys, People's P
 If user creates an account or logs in, the nav bar menu adjusts to show Home, Wildlife Surveys, People's Projects, Profile, Add own project, Logout.
 
 If user is an administrator, the menu shows Home, Wildlife Surveys, People's Projects, Profile, Add own project, Manage Categories, Contact Users and Logout.
+
+The footer links should open into new tabs, 'email admin' and 'Buy garden products here!' do not contain any information but the social media links should open onto their own home pages.
 ### Home page
 The home page contains a list of projects within collapsible elements.
 
