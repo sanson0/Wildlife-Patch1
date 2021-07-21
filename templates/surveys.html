@@ -8,7 +8,7 @@
   {% for survey in survey_links %}
   <div class="row">
     <div class="col s10 offset-s1 m5 offset-m1">
-      <a class="survey-link" href="{{survey.survey_link}}">{{ survey.survey_title }}</a><br>
+      <a class="survey-link" href="{{survey.survey_link}}" target="_blank">{{ survey.survey_title }}</a><br>
       {% if session.user|lower == "Admin"|lower %}
       <ul>
         <li>
