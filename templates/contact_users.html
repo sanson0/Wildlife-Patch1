@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!--Title and mission statement-->
 <h3 id="contact-users" class="center-align">Contact Users</h3>
 <h5 class="mission-statement center-align">Contact details for users can be found on this page</h5>
 <section id="contactuser-border" class="yellow">
@@ -8,9 +9,11 @@
         <div class="col s12 m8 offset-m2 center-align">
             <div class="card brown darken-4 text-shadow center-align">
                 <div class="card-content white-text">
+                    <!--Username-->
                     <span class="card-title">{{ user.username }}</span>
                 </div>
                 <div class="card-action">
+                    <!--User email-->
                     <h6 class="brown darken-4 white-text">{{ user.email }}</h6>
                 </div>
             </div>

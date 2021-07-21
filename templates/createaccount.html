@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!--Title and mission statement-->
 <h3 id="account-title">Create Account</h3>
 <h5 class="mission-statement center-align">Create an account and contribute to this app</h5>
 <section id="account-pic">
@@ -10,8 +11,8 @@
       <!--Name-->
       <div class="row">
         <div class="input-field txt-background col s12 m8 offset-m2">
-          <input class="white-text" id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
-            class="validate" required>
+          <input class="white-text" id="username" name="username" type="text" minlength="5" maxlength="15"
+            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
           <label for="username">Username</label>
         </div>
       </div>
@@ -40,8 +41,6 @@
       </div>
     </form>
   </div>
-
-
   <!--Login if existing user-->
   <div class="row">
     <div class="col s8 offset-s2 txt-background">

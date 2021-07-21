@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
+<!--Title and mission statement-->
 <h3 id="people-title">People's Projects</h3>
 <h5 class="mission-statement center-align">This page lists small garden projects contributed by app users</h5>
 <section id="bug-shelter">
+    <!--Search bar-->
     <div class="row card-panel brown darken-4">
         <form action=" {{ url_for('search_pps') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align brown lighten-4">
@@ -20,13 +22,14 @@
             </div>
         </form>
     </div>
-    
+    <!--List of projects-->
     <div class="row">
         {% if tasks|length > 0 %}
         <ul class="collapsible white col s12 m10 offset-m1">
             {% for task in tasks %}
             {% if task.on_homepage == "off" %}
             <li>
+                <!--Project category and name-->
                 <div class="collapsible-header white-text brown darken-4 text-shadow row">
                     <div class="col s12">
                         <img src="{{ task.image_url }}" alt="{{ task.image_description }}" height="40" width="40">
@@ -36,6 +39,7 @@
                         <i class="fas fa-caret-down"></i>
                     </div>
                 </div>
+                <!--Project details-->
                 <div class="collapsible-body">
                     <em>Description:</em><span> {{ task.task_description }}</span><br>
                     <em>Estimated Cost:</em><span> {{ task.estimated_cost }}</span><br>
@@ -44,15 +48,18 @@
                 </div>
             </li>
             <li>
+                <!--Add button-->
                 {% if session.user|lower == "Admin"|lower or task.created_by == session.user %}
                 <button class="btn-small brown lighten-3 col s4 m4">
                     <a class="white-text green darken-4 pad-text" href="{{ url_for('addownproject') }}">Add
                     </a>
                 </button>
+                <!--Edit button-->
                 <button class="btn-small brown lighten-3 col col s4 m4">
                     <a class="white-text green darken-4 pad-text" href="{{ url_for('edit_task', task_id=task._id) }}">Edit
                     </a>
                 </button>
+                <!--Delete button-->
                 <button class="btn-small brown lighten-3 col s4 m4">
                     <a class="white-text red pad-text" href="{{ url_for('delete_task_pps', task_id=task._id) }}">Delete
                     </a>
@@ -62,6 +69,7 @@
             {% endif %}
             {% endfor %}
         </ul>
+        <!--No results found message-->
         {% else %}
         <div id="no-results-found" class="col s6 offset-s3">
             <h1 class="deep-orange-text text-darken-4 center-align">No Results Found</h1>
