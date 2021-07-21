@@ -102,8 +102,10 @@ There is a description of the design of data in the [link](docs/data.pdf)
 * [Flask](https://flask.palletsprojects.com)
 * [Materialize](https://materializecss.com)
 
-# Testing
-
+# Deployment and Testing
+## Deployment to Heroku
+Deployment to Heroku takes two forms, deployment using the command line interface or automatic deployment.
+Both methods are described in the [link](docs/Deployment.pdf).
 ## Manual Testing
 Across all pages, the nav bar shows a menu of Home, Wildlife Surveys, People's Projects, Create Account, Login.
 
