@@ -87,6 +87,9 @@ Everyone can read the links.
 * Input fields for task name, task description, finish date, estimated cost, estimated time
 * date picker is linked to 'finish date' field to keep consistency of dates in the database
 * Submit button
+
+# Data
+There is a description of the design of data in the [link](docs/data.pdf)
 # Technologies used
 
 * [HTML](https://html.spec.whatwg.org)
@@ -125,6 +128,8 @@ Form should accept entries for username, password and email address and contain 
 Form should accept entries for username, password and email address and contain a submit button. Also, there is a link provided at the bottom of the page in case the user does not yet have an account and needs to get to the create account page.
 ### Profile page
 Profile page should show username and all projects submitted by that user only. It also allows the user to create, read, update and delete any of those projects.
+### Add own project
+This page should request category name, task name, task description, estimated cost, estimated time to complete, image as a url address and an image description. All categories are required except the category name, because a project may not fit easily into a category due to the variety within conservation and wildlife topics. If the admin chooses to move the project up to the home page, a category can be chosen or a new one can be created to accommodate the project.
 ### Manage Categories
 This page is displayed if the user is an admin, it displays all the project categories.
 The admin is allowed to create, update and delete categories so that the admin can control the project categories.
