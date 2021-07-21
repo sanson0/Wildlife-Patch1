@@ -1,7 +1,12 @@
 #base-background {
   background-color: greenyellow;
 }
-
+.nav-menu:active {
+  color: greenyellow;
+}
+.nav-minimenu:active {
+  color: green;
+}
 #login-statement {
   color: white;
   background-color: rgba(0, 0, 0, 0.8);
@@ -17,9 +22,6 @@
 #space {
   height: 40px;
   width: 100px;
-}
-button {
-  width: 170px;
 }
 .pad-text {
   padding-left: 5px;
@@ -37,12 +39,6 @@ button {
   color: black;
   font-weight: 700;
 }
-.card-panel {
-  background-color: green;
-}
-.btn-small {
-  width: 75px;
-}
 #wild-garden {
   background-image: url('https://cdn.pixabay.com/photo/2019/04/21/01/12/chrysanthemum-4143241__340.jpg');
   background-repeat: repeat-y;
@@ -50,7 +46,6 @@ button {
   width: 100%;
   border: solid black 2px;
 }
-
 #no-results-found {
   background-color: yellowgreen;
   border: solid black 2px;
@@ -61,13 +56,9 @@ button {
   text-decoration: underline;
   font-weight: 700;
 }
-
 #survey-title {
   font-weight: 700;
   text-align: center;
-}
-#links-message {
-  margin-bottom: 40px;
 }
 @media screen and (min-width: 601px) {
   #surveys-sunflower {
@@ -90,6 +81,9 @@ button {
 }
 .survey-margin {
   margin-top: 10px;
+}
+.message-survey {
+  margin: 5px 10px 5px 10px;
 }
 /*  People's projects */
 #bug-shelter {
@@ -119,20 +113,6 @@ button {
   border: solid black 2px;
 }
 
-#create-account-message {
-  background-color: aliceblue;
-  font-size: large;
-  font-weight: 600;
-}
-
-#create-button {
-  width: 200px;
-}
-
-#create-submit-border {
-  padding: 3px 3px 3px 3px;
-}
-
 /* Login page */
 #login-pic {
   background-image: url(https://cdn.pixabay.com/photo/2018/07/15/00/39/flowers-3538726_960_720.jpg);
@@ -141,19 +121,9 @@ button {
   width: 100%;
   border: solid black 2px;
 }
-
 #login-title {
   font-weight: 700;
   text-align: center;
-}
-
-#login-message {
-  font-size: large;
-  font-weight: 600;
-}
-
-#login-submit-border {
-  padding: 3px 3px 3px 3px;
 }
 .txt-background {
   background-color: rgba(0, 0, 0, 0.8);
@@ -172,10 +142,6 @@ button {
 }
 #categories-border {
   border: solid black 2px;
-}
-#add-category-button {
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 /* contact users */
 #contact-users {

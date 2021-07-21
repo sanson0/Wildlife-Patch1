@@ -24,39 +24,39 @@
 
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
-                    <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
-                    <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+                    <li><a class="nav-menu" href="{{ url_for('get_tasks') }}">Home</a></li>
+                    <li><a class="nav-menu" href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+                    <li><a class="nav-menu" href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
                     {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
+                    <li><a class="nav-menu" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li><a class="nav-menu" href="{{ url_for('addownproject') }}">Add Own Project</a></li>
                     {% if session.user|lower == "Admin"|lower %}
-                    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                    <li><a href="{{ url_for('contact_users') }}">Contact Users</a></li>
+                    <li><a class="nav-menu" href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+                    <li><a class="nav-menu" href="{{ url_for('contact_users') }}">Contact Users</a></li>
                     {% endif %}
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li><a class="nav-menu" href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a class="nav-menu" href="{{ url_for('createaccount') }}">Create Account</a></li>
+                    <li><a class="nav-menu" href="{{ url_for('login') }}">Log In</a></li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
         <ul class="sidenav home-bar" id="mobile-demo">
-            <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
-            <li><a href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
-            <li><a href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
+            <li><a class="nav-minimenu" href="{{ url_for('get_tasks') }}">Home</a></li>
+            <li><a class="nav-minimenu" href="{{ url_for('surveys') }}">Wildlife Surveys</a></li>
+            <li><a class="nav-minimenu" href="{{ url_for('get_peoplesprojects') }}">People's Projects</a></li>
             {% if session.user %}
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <li><a href="{{ url_for('addownproject') }}">Add Own Project</a></li>
+            <li><a class="nav-minimenu" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a class="nav-minimenu" href="{{ url_for('addownproject') }}">Add Own Project</a></li>
             {% if session.user|lower == "Admin"|lower %}
-            <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-            <li><a href="{{ url_for('contact_users') }}">Contact Users</a></li>
+            <li><a class="nav-minimenu" href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+            <li><a class="nav-minimenu" href="{{ url_for('contact_users') }}">Contact Users</a></li>
             {% endif %}
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a class="nav-minimenu" href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
-            <li><a href="{{ url_for('createaccount') }}">Create Account</a></li>
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a class="nav-minimenu" href="{{ url_for('createaccount') }}">Create Account</a></li>
+            <li><a class="nav-minimenu" href="{{ url_for('login') }}">Log In</a></li>
             {% endif %}
         </ul>
         <div id="space"></div>
