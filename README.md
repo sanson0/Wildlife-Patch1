@@ -57,6 +57,9 @@ Everyone can read the links.
 * There is a reset button linked to the search function to clear the search
 * Admin users have add, edit and delete buttons linked to each project
 * Other users have add, edit and delete buttons linked to each project that they created
+* if a user's project is particularly good, the admin user can use the switch at the bottom
+of the 'edit task' page, switching it on causes the project to move from 'People's Projects'
+to the 'Home' page.
 ## Features on the create account page
 * Input fields for username, password, email, all required attributes
 * Submit button
@@ -139,6 +142,8 @@ Add, edit and delete buttons are included if the user is an admin.
 This page allows the admin user to add a survey link into the surveys page when submit button is clicked.
 ### Edit link
 This page allows the admin user to edit a survey link in the surveys page when submit button is clicked. Cancel button returns admin user to the wildlife surveys page.
+### Delete link
+This function should delete the survey link, user should stay on 'Wildlife Surveys' page and a 'Deleted' message should flash.
 ### People's Projects
 This page should display projects submitted by app users using collapsible elements.
 
@@ -163,18 +168,25 @@ Profile page should show the username of person logged in and all projects submi
 This page should request category name, task name, task description, estimated cost, estimated time to complete, image as a url address and an image description. All categories are required. Submit button should update the project.
 ### Edit project
 This page should show category name, task name, task description, estimated cost, estimated time to complete, image as a url address and an image description. All categories are required. All can be modified. Submit button should update the project, cancel returns user to People's project page as this is where most users will want to go.
+### Delete project
+This function should delete the project, user should stay on same page as before and 'Deleted' message should flash.
 ### Manage Categories
 This page should display if the user is an admin, displaying all the project categories.
 
 The admin is allowed to create, update and delete categories so that the admin can control the project categories. Add and edit buttons open onto a new page each time.
 ### Add Category
-This page allows the admin user to input a new category name into the database when submit is clicked.
+This page allows the admin user to input a new category name into the database when submit is clicked. Category
+Added message should flash.
 ### Edit Category
-This page allows the admin user to change a category name in the database when submit is clicked. Cancel button returns admin user to 'Manage Categories' page.
+This page allows the admin user to change a category name in the database when submit is clicked. Category updated message should flash. Cancel button returns admin user to 'Manage Categories' page.
+### Delete Category
+This function should delete the project, stay on 'Manage Categories' page and flash a message 'Category Deleted'.
 ### Contact Users
 This page is displayed if the user is an admin, it displays all usernames with contact emails. This is useful, for example, if the admin moves a project up to the home page list because it is a good project. 
 ### Logout
 If clicked, a message should flash that says 'You have logged out'. The nav bar menu should adjust to show Home, Wildlife Surveys, People's Projects, Create Account, Login as before.
+### The Switch
+Admin users should be able to use the switch at the bottom of Edit Task or Add Task pages to put a project on the home page if the switch is on. This allows good projects to move to the home page.
 ### Responsiveness
 Check that different screen-widths display correctly for all devices.
 See [link](docs/Responsiveness.pdf)
