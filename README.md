@@ -34,6 +34,7 @@ A link to the [wireframe](docs/Wildlife_Patch_wireframe.pdf) is provided. The wi
 * There is a search function that targets project name and parts of task description
 * There is a reset button linked to the search function to clear the search
 * Admin users have add, edit and delete buttons linked to each project
+* Add and edit functions open onto their own pages.
 ## Features on the wildlife surveys page
 For the Wildlife Surveys page, the top results are listed 
 
@@ -79,7 +80,7 @@ Everyone can read the links.
 * Submit button
 ## Features on the edit category page
 * Input field for category name
-* Submit button
+* Submit and cancel button
 ## Features on the add project page
 * Select category field
 * Input fields for task name, task description, estimated cost, estimated time, url address for images, image name
@@ -88,8 +89,15 @@ Everyone can read the links.
 ## Features on the edit project page
 * Select category field
 * Input fields for task name, task description, estimated cost, estimated time, url address for images, image name
+* Submit and cancel button
+## Features on the add link page
+* Input link name
+* Input link web address
 * Submit button
-
+## Features on the edit link page
+* Edit link name
+* Edit link web address
+* Submit and cancel button
 # Data
 There is a description of the design of data in the [link](docs/data.pdf)
 # Technologies used
@@ -127,6 +135,10 @@ Clicking on the reset button should return the page to the full list of projects
 The wildlife surveys page contains all the most relevent external links to wildlife surveys.
 
 Add, edit and delete buttons are included if the user is an admin.
+### Add link
+This page allows the admin user to add a survey link into the surveys page when submit button is clicked.
+### Edit link
+This page allows the admin user to edit a survey link in the surveys page when submit button is clicked. Cancel button returns admin user to the wildlife surveys page.
 ### People's Projects
 This page should display projects submitted by app users using collapsible elements.
 
@@ -148,11 +160,17 @@ Also, there is a link provided at the bottom of the page in case the user does n
 ### Profile page
 Profile page should show the username of person logged in and all projects submitted by that user only. It should also allow the user to create, read, update and delete any of those projects.
 ### Add own project
-This page should request category name, task name, task description, estimated cost, estimated time to complete, image as a url address and an image description. All categories are required.
+This page should request category name, task name, task description, estimated cost, estimated time to complete, image as a url address and an image description. All categories are required. Submit button should update the project.
+### Edit project
+This page should show category name, task name, task description, estimated cost, estimated time to complete, image as a url address and an image description. All categories are required. All can be modified. Submit button should update the project, cancel returns user to People's project page as this is where most users will want to go.
 ### Manage Categories
 This page should display if the user is an admin, displaying all the project categories.
 
-The admin is allowed to create, update and delete categories so that the admin can control the project categories.
+The admin is allowed to create, update and delete categories so that the admin can control the project categories. Add and edit buttons open onto a new page each time.
+### Add Category
+This page allows the admin user to input a new category name into the database when submit is clicked.
+### Edit Category
+This page allows the admin user to change a category name in the database when submit is clicked. Cancel button returns admin user to 'Manage Categories' page.
 ### Contact Users
 This page is displayed if the user is an admin, it displays all usernames with contact emails. This is useful, for example, if the admin moves a project up to the home page list because it is a good project. 
 ### Logout
